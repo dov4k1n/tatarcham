@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lexicon">Лексика</string>
+    <string name="lexicon_subheading">Общие сведения</string>
+
+    <string name="training">Тренировка</string>
+    <string name="training_subheading">Интервальные повторения</string>
+    <string name="cards">Карточки</string>
+    <string name="matches">Соответствия</string>
+
+    <string name="dictionary">Словарь</string>
+    <string name="explore_new_words">Исследуйте новые слова</string>
+    <string name="swadesh_list">Список Сводеша</string>
+    <string name="top_words">Топ слов</string>
+    <string name="top_verbs">Топ глаголов</string>
+    <string name="top_nouns">Топ существительных</string>
+    <string name="top_adjectives">Топ прилагательных</string>
+    <string name="people">Люди</string>
+    <string name="animals">Животные</string>
+    <string name="food">Еда</string>
+    <string name="professions">Профессии</string>
+
+    <string name="words_207">207 слов</string>
+    <string name="words_1000">1000 слов</string>
+    <string name="words_100">100 слов</string>
+    <string name="words_25">25 слов</string>
+    <string name="words_40">40 слов</string>
+    <string name="words_50">50 слов</string>
+    <string name="words_30">30 слов</string>
+</resources>

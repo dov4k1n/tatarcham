@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="adjective">Прилагательное</string>
+    <string name="adjective_subheading">Обозначает качество, свойство или принадлежность предмета</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="adjective_ezafe">Изафеты</string>
+    <string name="adjective_degrees_of_comparison">Степени сравнения</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="adjective_ezafe_description"></string>
+    <string name="adjective_degrees_of_comparison_description"></string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pronoun">Pronoun</string>
+    <string name="pronouns_subheading">Replaces noun, adjective, numeral and adverb</string>
+    
+    <string name="pronoun_possessive">Possessive pronouns</string>
+    <string name="pronoun_demonstrative">Demonstrative pronouns</string>
+    <string name="pronoun_interrogative">Interrogative pronouns</string>
+    <string name="pronoun_determinative">Determinative pronouns</string>
+    <string name="pronoun_indefinite">Indefinite pronouns</string>
+    <string name="pronoun_negative">Negative pronouns</string>
+
+    <string name="pronoun_possessive_description"></string>
+    <string name="pronoun_demonstrative_description"></string>
+    <string name="pronoun_interrogative_description"></string>
+    <string name="pronoun_determinative_description"></string>
+    <string name="pronoun_indefinite_description"></string>
+    <string name="pronoun_negative_description"></string>
+</resources>

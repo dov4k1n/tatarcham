@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lexicon">Lexicon</string>
+    <string name="lexicon_subheading">General information</string>
+
+    <string name="training">Training</string>
+    <string name="training_subheading">Spaced repetitions</string>
+    <string name="cards">Cards</string>
+    <string name="matches">Matches</string>
+
+    <string name="dictionary">Dictionary</string>
+    <string name="explore_new_words">Explore new words</string>
+    <string name="swadesh_list">Swadesh list</string>
+    <string name="top_words">Top words</string>
+    <string name="top_verbs">Top verbs</string>
+    <string name="top_nouns">Top nouns</string>
+    <string name="top_adjectives">Top adjectives</string>
+    <string name="people">People</string>
+    <string name="animals">Animals</string>
+    <string name="food">Food</string>
+    <string name="professions">Professions</string>
+
+    <string name="words_207">207 words</string>
+    <string name="words_1000">1000 words</string>
+    <string name="words_100">100 words</string>
+    <string name="words_25">25 words</string>
+    <string name="words_40">40 words</string>
+    <string name="words_50">50 words</string>
+    <string name="words_30">30 words</string>
+
+</resources>

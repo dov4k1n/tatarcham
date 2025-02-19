@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phonetics">Алфавит</string>
+    <string name="phonetics_subheading">Буквы и звуки татарского языка</string>
+
+    <string name="harmonies">Гармонии</string>
+    <string name="harmonies_subheading">Уподобление гласных и согласных</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="vowel_harmony">Гармония ряда</string>
+    <string name="rounding_harmony">Гармония губ</string>
+    <string name="hard_soft_k_g">Твёрдые и мягкие К, Г</string>
+    <string name="voicing_k_p">Озвончение К, П</string>
+    <string name="diftongs">Дифтонги</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="vowel_harmony_description"></string>
+    <string name="rounding_harmony_description"></string>
+    <string name="hard_soft_k_g_description"></string>
+    <string name="voicing_k_p_description"></string>
+    <string name="diftongs_description"></string>
+
+</resources>

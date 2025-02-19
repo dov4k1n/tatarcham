@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phonetics">Phonetics</string>
+    <string name="phonetics_subheading">Letters and sounds of the Tatar language</string>
+    
+    <string name="harmonies">Harmonies</string>
+    <string name="harmonies_subheading">Similarity of vowels and consonants</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="vowel_harmony">Vowel harmony</string>
+    <string name="rounding_harmony">Rounding harmony</string>
+    <string name="hard_soft_k_g">Hard and soft K, G</string>
+    <string name="voicing_k_p">Voicing K, P</string>
+    <string name="diftongs">Diftongs</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="vowel_harmony_description"></string>
+    <string name="rounding_harmony_description"></string>
+    <string name="hard_soft_k_g_description"></string>
+    <string name="voicing_k_p_description"></string>
+    <string name="diftongs_description"></string>
+
+</resources>

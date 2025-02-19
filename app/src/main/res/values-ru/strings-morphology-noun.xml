@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="noun">Существительное</string>
+    <string name="noun_subheading">Обозначает предмет</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="noun_plural">Множественное число</string>
+    <string name="noun_genitive_case">Притяжательный падеж</string>
+    <string name="noun_dative_case">Направительный падеж</string>
+    <string name="noun_accusative_case">Винительный падеж</string>
+    <string name="noun_ablative_case">Исходный падеж</string>
+    <string name="noun_locative_case">Местно-временной падеж</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="noun_plural_description"></string>
+    <string name="noun_genitive_case_description"></string>
+    <string name="noun_dative_case_description"></string>
+    <string name="noun_accusative_case_description"></string>
+    <string name="noun_ablative_case_description"></string>
+    <string name="noun_locative_case_description"></string>
+
+    <!-- SESSION'S THEORY -->
+    <string name="noun_plural_theory">
+        урман –> урман<b><u>нар</u></b>\n
+        алма –> алма<b><u>лар</u></b>\n\n
+
+        Добавляются окончания <b>НАР / НӘР / ЛАР / ЛӘР</b> в зависимости от последнего звука корня\n\n
+
+        1. <b>НАР / НӘР</b>, если заканчивается на сонорный звук [м], [н], [ң]\n
+        2. <b>ЛАР / ЛӘР</b> в остальных случаях
+    </string>
+
+</resources>

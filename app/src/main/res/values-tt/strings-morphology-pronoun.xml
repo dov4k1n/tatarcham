@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pronoun">Алмашлык</string>
+    <string name="pronouns_subheading">Исемне, сыйфатеы, санны һәм рәвешне алмаштыра</string>
+
+    <string name="pronoun_possessive">Тартым алмашлыклары</string>
+    <string name="pronoun_demonstrative">Күрсәтү алмашлыклары</string>
+    <string name="pronoun_interrogative">Сорау алмашлыклары</string>
+    <string name="pronoun_determinative">Билгеләү алмашлыклары</string>
+    <string name="pronoun_indefinite">Билгесезлек алмашлыклары</string>
+    <string name="pronoun_negative">Юклык алмашлыклары</string>
+
+    <string name="pronoun_possessive_description"></string>
+    <string name="pronoun_demonstrative_description"></string>
+    <string name="pronoun_interrogative_description"></string>
+    <string name="pronoun_determinative_description"></string>
+    <string name="pronoun_indefinite_description"></string>
+    <string name="pronoun_negative_description"></string>
+</resources>

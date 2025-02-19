@@ -1,0 +1,426 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="verb">Глагол</string>
+    <string name="verb_subheading">Обозначает действие или состояние</string>
+
+
+
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="action_time">Действие происходит</string>
+    <string name="question">Отвечает на вопрос</string>
+    <string name="conjugation_base">Спрягаемая основа</string>
+    <string name="personal_affixes">Личные аффиксы</string>
+    <string name="negative_form">Отрицательная форма</string>
+    <string name="to_the_root">&#160;к корню</string>
+
+
+
+
+    <!-- PRESENT -->
+    <string name="verb_present">Настоящее время</string>
+
+    <string name="verb_present_base_affix_one">
+        &#160;а / ә
+    </string>
+    <string name="verb_present_base_case_one">
+        , если корень глагола заканчивается на согласный
+    </string>
+    <string name="verb_present_base_affix_two">
+        &#160;ый / и
+    </string>
+    <string name="verb_present_base_case_two">
+        , если корень глагола заканчивается на гласный, вместо этой гласной
+    </string>
+
+    <string name="verb_present_affixes">
+        &#160;-м \n -сың / -сең \n \n -быз / -без \n -сыз / -сез \n -лар / -ләр
+    </string>
+
+    <string name="verb_present_examples">
+        &#160;1. \n яз \n яза \n мин язам \n (я пишу) \n\n
+        2. \n әйт \n әйтә \n син әйтәсең \n (ты говоришь) \n\n
+        3. \n укы \n укый \n ул укый \n (он читает) \n\n
+        4. \n сөйлә \n сөйли \n без сөйлибез \n (мы рассказываем)
+    </string>
+
+    <string name="present_description_action_time">в момент речи или в ближайшем будущем</string>
+    <string name="present_description_question">«что делает?»</string>
+    <string name="present_description_conjugation_base_affix_one">а / ә</string>
+    <string name="present_description_conjugation_base_case_one">&#160;после согл.</string>
+    <string name="present_description_conjugation_base_affix_two">ый / и</string>
+    <string name="present_description_conjugation_base_case_two">&#160;после гл.</string>
+    <string name="present_description_personal_affixes">м \n сың / сең \n \n быз / без \n сыз / сез \n лар / ләр</string>
+    <string name="present_description_negative_form">мый / ми</string>
+
+    <string name="verb_present_description">
+        <b>Действие происходит в момент речи</b>. Отвечает на вопросы <b>\«что делает?\», \«что не делает?\»</b>.\n\n
+        Может выражать и другие действия:\n\n
+        <b>Происходящие всегда</b> или <b>повторяющиеся</b>: \«Һәр ел саен, сагынышып, кошлар <u>кайта</u>\». [каждый год, соскучившись, птицы возвращаются]\n\n
+        <b>Показывающие прошедшие события более оживлённо</b>: \«Бөек Ватан сугышы 1941 нче елның 22 июнендә <u>башлана</u>\». [Великая Отечественная война 22 июня 1941 года начинается]\n\n
+        <b>Показывающие неотвратимость действий в ближайшем будущем</b> (и как нейтральное будущее время): \«Бәйрәм кичәсе иртәгә көндез клубта <u>була</u>\». [праздничный вечер завтра днём в клубе будет]
+    </string>
+
+    <string name="verb_present_theory">
+        сөйләш –> сөйләш<u>ә</u> –> сөйләш<u>ә</u><b>м</b>\n
+        сөйлә –> сөйл<u>и</u> –> сөйл<u>и</u><b>м</b>\n\n
+
+        1. <b><u>Корень глагола</u></b> – 2 лицо ед. число повелительное наклонение:\nистә калдыр! = запомни!\n\n
+        2. По корню строится <b><u>спрягаемая основа</u></b> – 3 лицо ед. число изъявительное наклонение:\nул аңлый = он понимает\n\n
+        3. К спрягаемой основе присоединяются <b><u>личные окончания</u></b>:\nсөйләш -> ул сөйләшә -> мин сөйләшәм, син сөйләшәсең, без сөйләшәбез и т.д.\n\n
+
+        Образование спрягаемой основы:\n\n
+
+        1. Окончание <b>А / Ә</b>, если корень заканчивается на согласный\n
+        2. Окончание <b>ЫЙ / И</b>, если корень заканчивается на гласный, вместо этой гласной\n\n
+
+        <i>Мягкое слово – мягкое окончание</i>\n
+        <i>Твёрдое слово – твёрдое окончание</i>\n\n
+
+        Личные окончания:\n\n
+
+        1) Мин: <b>М</b>\n
+        2) Син: <b>СЫҢ / СЕҢ</b>\n
+        3) Ул:\n
+        4) Без: <b>БЫЗ / БЕЗ</b>\n
+        5) Сез: <b>СЫЗ / СЕЗ</b>\n
+        6) Алар: <b>ЛАР / ЛӘР</b>\n\n
+
+        Примеры:\n\n
+
+        1. яз –> яза –> мин язам (я пишу)\n
+        2. әйт –> әйтә –> син әйтәсең (ты говоришь)\n
+        3. укы –> укый –> ул укый (он читает)\n
+        4. сөйлә –> сөйли –> без сөйлибез (мы рассказываем)
+    </string>
+
+
+
+
+    <!-- DEFINITE PAST -->
+    <string name="verb_definite_past">Непределённое прошедшее время</string>
+
+    <string name="verb_definite_past_base_affix_one">
+        &#160;ты / те
+    </string>
+    <string name="verb_definite_past_base_case_one">
+        , если корень глагола заканчивается на глухой согласный
+    </string>
+    <string name="verb_definite_past_base_affix_two">
+        &#160;ды / де
+    </string>
+    <string name="verb_definite_past_base_case_two">
+        , иначе
+    </string>
+
+    <string name="verb_definite_past_affixes">
+        &#160;м \n ң \n \n к \n гыз / гез \n лар / ләр
+    </string>
+
+    <string name="verb_definite_past_examples">
+        &#160;1. \n кайт \n кайтты \n мин кайттым \n (я вернулся) \n\n
+        2. \n əйт \n əйтте \n син əйттең \n (ты сказал) \n\n
+        3. \n укы \n укыды \n ул укыды \n (он прочитал) \n\n
+        4. \n сөйлә \n сөйләде \n без сөйләдек \n (мы рассказали)
+    </string>
+
+    <string name="definite_past_description_action_time">до момента речи, говорящий видел это</string>
+    <string name="definite_past_description_question">«что сделал?»</string>
+    <string name="definite_past_description_conjugation_base_affix_one">ты / те</string>
+    <string name="definite_past_description_conjugation_base_case_one">&#160;после глухих согл.</string>
+    <string name="definite_past_description_conjugation_base_affix_two">ды / де</string>
+    <string name="definite_past_description_conjugation_base_case_two">&#160;иначе</string>
+    <string name="definite_past_description_personal_affixes">м \n ң \n \n к \n гыз / гез \n лар / ләр</string>
+    <string name="definite_past_description_negative_form">ма / мә</string>
+
+    <string name="verb_definite_past_description">Ә монысы определённое прошедшее время! Неопределённое да була микән мени соң?</string>
+
+    <string name="verb_definite_past_theory">
+        сөйләш –> сөйләш<u>те</u> –> сөйләш<u>те</u><b>м</b>\n
+        сөйлә –> сөйлә<u>де</u> –> сөйлә<u>де</u><b>м</b>\n\n
+
+        Описываемое точно произошло, говорящий в этом не сомневается.\n\n
+
+        Спрягаемая основа:\n
+        1. Окончание <b>ТЫ / ТЕ</b>, если корень заканчивается на глухой согласный\n
+        2. Окончание <b>ДЫ / ДЕ</b> в остальных случаях\n\n
+
+        Личные окончания:\n
+        1) Мин: <b>М</b>\n
+        2) Син: <b>Ң</b>\n
+        3) Ул:\n
+        4) Без: <b>К</b>\n
+        5) Сез: <b>ГЫЗ / ГЕЗ</b>\n
+        6) Алар: <b>ЛАР / ЛӘР</b>
+    </string>
+
+
+
+
+    <!-- INDEFINITE PAST -->
+    <string name="verb_indefinite_past">Неопределённое прошедшее время</string>
+
+    <string name="verb_indefinite_past_base_affix_one">
+        &#160;кан / кəн
+    </string>
+    <string name="verb_indefinite_past_base_case_one">
+        , если корень глагола заканчивается на глухой согласный
+    </string>
+    <string name="verb_indefinite_past_base_affix_two">
+        &#160;ган / гəн
+    </string>
+    <string name="verb_indefinite_past_base_case_two">
+        , иначе
+    </string>
+
+    <string name="verb_indefinite_past_affixes">
+        &#160;мын / мен \n сың / сең \n \n быз / без \n сыз / сез \n нар / нәр
+    </string>
+
+    <string name="verb_indefinite_past_examples">
+        &#160;1. \n кайт \n кайткан \n мин кайтканмын \n (Я вернулся, видимо) \n\n
+        2. \n əйт \n əйткəн \n син əйткəнсең \n (ты сказал, видимо) \n\n
+        3. \n укы \n укыган \n ул укыган \n (он прочитал, видимо) \n\n
+        4. \n сөйлә \n сөйләгән \n без сөйләгәнбез \n (мы рассказали, видимо)
+    </string>
+
+    <string name="indefinite_past_description_action_time">до момента речи, говорящий не видел это</string>
+    <string name="indefinite_past_description_question">«что сделал?»</string>
+    <string name="indefinite_past_description_conjugation_base_affix_one">кан / кән</string>
+    <string name="indefinite_past_description_conjugation_base_case_one">&#160;после глухих согл.</string>
+    <string name="indefinite_past_description_conjugation_base_affix_two">ган / гән</string>
+    <string name="indefinite_past_description_conjugation_base_case_two">&#160;иначе</string>
+    <string name="indefinite_past_description_personal_affixes">мын / мен \n сың / сең \n \n быз / без \n сыз / сез \n нар / нәр</string>
+    <string name="indefinite_past_description_negative_form">ма / мә</string>
+
+    <string name="verb_indefinite_past_description">Була! Ой. Булган. Һәм була.</string>
+
+    <string name="verb_indefinite_past_theory">
+        сөйләш –> сөйлә<u>кән</u> –> сөйләш<u>кән</u><b>мен</b>\n
+        сөйлә –> сөйлә<u>гән</u> –> сөйлә<u>гән</u><b>мен</b>\n\n
+
+        И нейтральное описание прошлого, и с оттенком неопределённости. Говорящий не был свидетелем описываемого.\n\n
+
+        Спрягаемая основа:\n
+        1. Окончание <b>КАН / КӘН</b>, если корень заканчивается на глухой согласный\n
+        2. Окончание <b>ГАН / ГӘН</b> в остальных случаях\n\n
+
+        Личные окончания:\n
+        1) Мин: <b>МЫН / МЕН</b>\n
+        2) Син: <b>СЫҢ / СЕҢ</b>\n
+        3) Ул:\n
+        4) Без: <b>БЫЗ / БЕЗ</b>\n
+        5) Сез: <b>СЫЗ / СЕЗ</b>\n
+        6) Алар: <b>НАР / НӘР</b>
+    </string>
+
+
+
+
+    <!-- PAST CONTINUOUS -->
+    <string name="verb_past_continuous">Незаконченное прошедшее время</string>
+
+    <string name="verb_past_continuous_base_affix_one">
+        &#160;а / ә
+    </string>
+    <string name="verb_past_continuous_base_case_one">
+        , если корень глагола заканчивается на согласный
+    </string>
+    <string name="verb_past_continuous_base_affix_two">
+        &#160;ый / и
+    </string>
+    <string name="verb_past_continuous_base_case_two">
+        , если корень глагола заканчивается на гласный, вместо этой гласной
+    </string>
+
+    <string name="verb_past_continuous_affixes">
+        &#160;идем \n идең \n иде \n идек \n идегез \n иделәр
+    </string>
+
+    <string name="verb_past_continuous_examples">
+        &#160;1. \n яз \n яза иде \n мин яза идем \n (я писал) \n\n
+        2. \n әйт \n әйтә иде \n син әйтә идең \n (ты говорил) \n\n
+        3. \n укы \n укый иде \n ул укый иде \n (он читал) \n\n
+        4. \n сөйлә \n сөйли иде \n без сөйли идек \n (we were telling)
+    </string>
+
+    <string name="past_continuous_description_action_time">до момента речи, регулярно или продолжительно, часто вместе с другим действием</string>
+    <string name="past_continuous_description_question">«что делал?»</string>
+    <string name="past_continuous_description_conjugation_base_affix_one">а / ә</string>
+    <string name="past_continuous_description_conjugation_base_case_one">&#160;после согл.</string>
+    <string name="past_continuous_description_conjugation_base_affix_two">ый / и</string>
+    <string name="past_continuous_description_conjugation_base_case_two">&#160;после гл.</string>
+    <string name="past_continuous_description_personal_affixes">идем \n идең \n иде \n идек \n идегез \n иделәр</string>
+    <string name="past_continuous_description_negative_form">мый / ми</string>
+
+    <string name="verb_past_continuous_description">Паст континиус! Ой, повторенное прошедшее! Продлённое прошедшее!! Незаконченн…</string>
+
+    <string name="verb_past_continuous_theory" tools:ignore="TypographyEllipsis">
+        сөйләш –> сөйләш<u>ә</u> иде –> сөйләш<u>ә</u> иде<b>м</b>\n
+        сөйлә –> сөйл<u>и</u> иде –> сөйл<u>и</u> иде<b>м</b>\n\n
+
+        Действие в прошлом совершается продолжительное время или часто.\n\n
+
+        Спрягаемая основа:\n
+        1. Корень в форме <b>спрягаемой основы глагола <u>настоящего</u> времени</b>\n
+        2. В конец через пробел вспомогательный глагол <b>иде</b>\n\n
+
+        <i>Иде</i> с личными окончаниями:\n
+        1) Мин: <b>ИДЕМ</b>\n
+        2) Син: <b>ИДЕҢ</b>\n
+        3) Ул: <b>ИДЕ</b>\n
+        4) Без: <b>ИДЕК</b>\n
+        5) Сез: <b>ИДЕГЕЗ</b>\n
+        6) Алар: <b>ИДЕЛӘР</b>
+    </string>
+
+
+
+
+    <!-- PAST PERFECT -->
+    <string name="verb_past_perfect">Давнопрошедшее время</string>
+
+    <string name="verb_past_perfect_description">Паст пёрфокт. Больше мне не пиши. Давнопрошедшее.</string>
+
+    <string name="verb_past_perfect_theory">
+        сөйләш –> сөйләш<u>кән</u> иде –> сөйләш<u>кән</u> иде<b>м</b>\n
+        сөйлә –> сөйлә<u>гән</u> иде –> сөйлә<u>гән</u> иде<b>м</b>\n\n
+
+        Действие произошло раньше другого действия (о втором могут говорить неявно).\n\n
+
+        Спрягаемая основа:\n
+        1. Корень в форме <b>спрягаемой основы глагола <u>неопределённого прошедшего</u> времени</b>\n
+        2. В конец через пробел вспомогательный глагол <b>иде</b>\n\n
+
+        <i>Иде</i> с личными окончаниями:\n
+        1) Мин: <b>ИДЕМ</b>\n
+        2) Син: <b>ИДЕҢ</b>\n
+        3) Ул: <b>ИДЕ</b>\n
+        4) Без: <b>ИДЕК</b>\n
+        5) Сез: <b>ИДЕГЕЗ</b>\n
+        6) Алар: <b>ИДЕЛӘР</b>
+    </string>
+
+
+
+
+    <!-- DEFINITE FUTURE -->
+    <string name="verb_definite_future">Определённое будущее время</string>
+
+    <string name="verb_definite_future_description">Киләчәктә ни булачак икән?</string>
+
+    <string name="verb_definite_future_theory">
+        сөйләш –> сөйләш<u>әчәк</u> –> сөйләш<u>әчәк</u><b>мен</b>\n
+        сөйлә –> сөйлә<u>ячәк</u> –> сөйлә<u>ячәк</u><b>мен</b>\n\n
+
+        Сөйләп торган вакыттан соң буласы эш яки хәлнең һичшиксез үтәләчәген белдерә.\n\n
+
+        Спрягаемая основа:\n
+        1. Окончание <b>АЧАК / ӘЧӘК</b>, если корень заканчивается на согласный\n
+        2. Окончание <b>ЯЧАК / ЯЧӘК</b>, если корень заканчивается на гласный\n\n
+
+        Личные окончания:\n
+        1) Мин: <b>МЫН / МЕН</b>\n
+        2) Син: <b>СЫҢ / СЕҢ</b>\n
+        3) Ул:\n
+        4) Без: <b>БЫЗ / БЕЗ</b>\n
+        5) Сез: <b>СЫЗ / СЕЗ</b>\n
+        6) Алар: <b>ЛАР / ЛӘР</b>
+    </string>
+
+
+
+
+    <!-- INDEFINITE FUTURE -->
+    <string name="verb_indefinite_future">Неопределённое будущее время</string>
+
+    <string name="verb_indefinite_future_description">Неопределённость гына өстәлер монда…</string>
+
+    <string name="verb_indefinite_future_theory">
+        сөйләш –> сөйләш<u>ер</u> –> сөйләш<u>ер</u><b>мен</b>\n
+        сөйлә –> сөйлә<u>р</u> –> сөйлә<u>р</u><b>мен</b>\n\n
+
+        Сөйләп торган вакыттан соң буласы эш яки хәлнең үтәлешен ихтималлык төсмере белән белдерә.\n\n
+
+        Спрягаемая основа:\n\n
+        1. Больше 1 слога в корне, последний звук согласный = окончание <b>ЫР / ЕР</b>\n
+        2. Больше 1 слога в корне, последний звук гласный = окончание <b>Р</b>\n
+        3. Один слог в корне, последний звук Р / Л = окончание <b>ЫР / ЕР</b>\n
+        4. Один слог в корне, последний звук И / Й = окончание <b>ЯР</b>\n
+        5. Один слог в корне, последний звук любой другой = окончание <b>АР / ЯР</b>\n\n
+
+        Личные окончания:\n
+        1) Мин: <b>МЫН / МЕН</b>\n
+        2) Син: <b>СЫҢ / СЕҢ</b>\n
+        3) Ул:\n
+        4) Без: <b>БЫЗ / БЕЗ</b>\n
+        5) Сез: <b>СЫЗ / СЕЗ</b>\n
+        6) Алар: <b>ЛАР / ЛӘР</b>
+    </string>
+
+
+
+
+    <!-- INFINITIVE -->
+    <string name="verb_infinitive">Инфинитив</string>
+
+    <string name="verb_infinitive_description">Начальная форма глагола диләр! Кая монда начальная инде ?! Кырык сигезенче дәрескә генә ни икәнен аңлыйсың.</string>
+
+    <string name="verb_infinitive_theory">
+        сөйләш –> сөйләш<u>ер</u> –> сөйләш<u>ер</u><b>гә</b>\n
+        сөйлә –> сөйлә<u>р</u> –> сөйлә<u>р</u><b>гә</b>\n\n
+
+        В татарском совсем не начальная форма глагола. Нужна для конструкций. Пример: нужно поговорить = сөйләшергә кирәк\n\n
+
+        Образование:\nКорень в форме <b>спрягаемой основы глагола <u>неопределённого будущего</u> времени</b> + <b>ГА / ГӘ</b>
+    </string>
+
+
+
+
+    <!-- GERUND -->
+    <string name="verb_gerund">Имя действия</string>
+
+    <string name="verb_gerund_description">Менә монысы әйбәәт! Рәхмәт Гриндевальдка!.. ой, тьфу, герундийга!</string>
+
+    <string name="verb_gerund_theory">
+        сөйләш –> сөйләш<u>ү</u>\n\n
+        сөйлә –> сөйлә<u>ү</u>\n\n
+
+        Синоним герундия, выражает действие как предмет. Сочетает в себе признаки существительного и глагола.\n\n
+
+        Образование:\nКорень глагола + <b>У / Ү</b>
+    </string>
+
+
+
+
+    <!-- FUTURE IN THE PAST -->
+    <string name="verb_future_in_the_past">Будущее в прошедшем</string>
+
+    <string name="verb_future_in_the_past_description">Фьючеинзепаст. Новый стендап Әмирхххана.</string>
+
+    <string name="verb_future_in_the_past_theory" tools:ignore="TypographyEllipsis">
+        сөйләш –> сөйләш<u>әчәк</u> иде –> сөйләш<u>әчәк</u> иде<b>м</b>\n\n
+        сөйлә –> сөйлә<u>ячәк</u> иде –> сөйлә<u>ячәк</u> иде<b>м</b>\n\n
+
+        Cсылка на время находится в будущем по отношению к точке зрения в прошлом.\n\n
+
+        Спрягаемая основа:\n
+        1. Корень в форме <b>спрягаемой основы глагола <u>определённого будущего</u> времени</b>\n
+        2. В конец через пробел вспомогательный глагол <b>иде</b>\n\n
+
+        <i>Иде</i> с личными окончаниями:\n
+        1) Мин: <b>ИДЕМ</b>\n
+        2) Син: <b>ИДЕҢ</b>\n
+        3) Ул: <b>ИДЕ</b>\n
+        4) Без: <b>ИДЕК</b>\n
+        5) Сез: <b>ИДЕГЕЗ</b>\n
+        6) Алар: <b>ИДЕЛӘР</b>
+    </string>
+
+
+
+
+
+</resources>

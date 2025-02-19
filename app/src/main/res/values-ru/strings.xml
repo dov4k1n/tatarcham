@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">tatarçam</string>
+    <string name="language">Язык</string>
+
+    <string name="under_development">Этот раздел в разработке</string>
+    <string name="report_mistake">Сообщить об ошибке</string>
+    <string name="open_link">Открыть ссылку</string>
+    <string name="open_donation_page">Открыть страницу пожертвований ♥️</string>
+    <string name="open_website">Открыть сайт</string>
+    <string name="open_telegram_channel">Открыть телеграм канал</string>
+    <string name="open_link_question">Вы хотите открыть эту ссылку?</string>
+    <string name="cancel">Отмена</string>
+    <string name="open">Открыть</string>
+
+    <string name="bottom_bar_phonetics">Фонетика</string>
+    <string name="bottom_bar_lexicon">Лексика</string>
+    <string name="bottom_bar_morphology">Морфология</string>
+    <string name="bottom_bar_syntax">Синтаксис</string>
+    <string name="bottom_bar_culture">Культура</string>
+
+    <string name="profile">Профиль</string>
+    <string name="statistics">Статистика</string>
+    <string name="web">Сайт</string>
+    <string name="community">Сообщество</string>
+    <string name="settings">Настройки</string>
+    <string name="invite_friends">Пригласить друзей</string>
+    <string name="help">Помощь</string>
+    <string name="about_app">О приложении</string>
+    <string name="support_developers">Поддержать разработчиков</string>
+    <string name="version">Tatarçam для Андроид v%s</string>
+
+    <string name="friendly_marketing_text">Учу татарский язык здесь, очень интересно!\nhttps://t.me/tatar_app</string>
+
+    <string name="about">Описание:\n</string>
+    <string name="more">Дополнительно</string>
+    <string name="play">НАЧАТЬ</string>
+
+    <string name="score">Правильные ответы: %d (%d%%)</string>
+    <string name="verb_task_message">Поставьте глагол в форму</string>
+    <string name="non_verb_task_message">Поставьте слово в форму</string>
+    <string name="wrong_guess">Ой...</string>
+    <string name="enter_your_word">Введите ответ</string>
+    <string name="your_wrong_type">Вы написали: %s</string>
+    <string name="submit">Ответить</string>
+    <string name="skip">Пропустить</string>
+
+    <string name="gotcha">Аа, теперь понятно.</string>
+
+    <string name="session_stats_share_title">Поделиться результатами сессии</string>
+    <string name="session_stats_share_message">Я решил %d задач, %d%% правильных ответов! Давайте учить татарский язык! 💙 https://t.me/tatar_app</string>
+
+    <string name="congratulations">Браво!</string>
+    <string name="you_scored">Вы ввели %d правильных ответов!</string>
+    <string name="play_again">Попробоватҗ снова</string>
+    <string name="exit">Выйти</string>
+
+    <string name="introduction">Введение</string>
+    <string name="introduction_subheading">Про морфологию и татарский язык в целом</string>
+
+    <string name="person_tat">Лицо (тат.)</string>
+    <string name="person_eng">Лицо (рус.)</string>
+    <string name="pronouns_personal_tat">мин\nсин\nул\nбез\nсез\nалар</string>
+    <string name="pronouns_personal">я\nты\nон, она, оно\nмы\nвы\nони</string>
+    <string name="affix">Аффикс</string>
+    <string name="formation_of_the_conjugated_stem">Образование спрягаемой основы:</string>
+    <string name="examples">Примеры:</string>
+    <string name="hard_hard_soft_soft">
+        Последний гласный корня заднего ряда? \n –> приклейте окончание с гласной заднего ряда\n\n
+        Последний гласный корня переднего ряда? \n –> приклейте окончание с гласной переднего ряда
+    </string>
+</resources>

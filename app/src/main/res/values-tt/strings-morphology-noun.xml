@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="noun">Исем</string>
+    <string name="noun_subheading">Предметны белдерә</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="noun_plural">Күплек сан</string>
+    <string name="noun_genitive_case">Иялек килеше</string>
+    <string name="noun_dative_case">Юнәлеш килеше</string>
+    <string name="noun_accusative_case">Төшем килеше</string>
+    <string name="noun_ablative_case">Чыгыш килеше</string>
+    <string name="noun_locative_case">Урын-вакыт килеше</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="noun_plural_description"></string>
+    <string name="noun_genitive_case_description"></string>
+    <string name="noun_dative_case_description"></string>
+    <string name="noun_accusative_case_description"></string>
+    <string name="noun_ablative_case_description"></string>
+    <string name="noun_locative_case_description"></string>
+
+    <!-- SESSION'S THEORY -->
+    <string name="noun_plural_theory">
+        урман –> урман<b><u>нар</u></b>\n
+        алма –> алма<b><u>лар</u></b>\n\n
+
+        Сүзнең соңгы авазына карап, <b>НАР / НӘР / ЛАР / ЛӘР</b> кушымчалары өстәлә\n\n
+
+        1. [м], [н], [ң] борын авазларына бетсә – <b>НАР / НӘР</b>\n
+        2. Башка очракларда <b>ЛАР / ЛӘР</b>
+    </string>
+
+</resources>

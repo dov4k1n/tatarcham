@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="noun">Noun</string>
+    <string name="noun_subheading">Denotes an object</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="noun_plural">Plural form</string>
+    <string name="noun_genitive_case">Genitive case</string>
+    <string name="noun_dative_case">Dative case</string>
+    <string name="noun_accusative_case">Accusative case</string>
+    <string name="noun_ablative_case">Ablative case</string>
+    <string name="noun_locative_case">Locative case</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="noun_plural_description"></string>
+    <string name="noun_genitive_case_description"></string>
+    <string name="noun_dative_case_description"></string>
+    <string name="noun_accusative_case_description"></string>
+    <string name="noun_ablative_case_description"></string>
+    <string name="noun_locative_case_description"></string>
+
+    <!-- SESSION'S THEORY -->
+    <string name="noun_plural_theory">
+        urman ➞ urman<b><u>nar</u></b>\n
+        alma ➞ alma<b><u>lar</u></b>\n\n
+
+        The endings <b>NAR / NƏR / LAR / LƏR</b> are added depending on the last sound of the root\n\n
+
+        1. <b>NAR / NƏR</b> if it ends in a sonorant sounds [m], [n], [ñ]\n
+        2. <b>LAR / LƏR</b> in other cases
+    </string>
+
+</resources>

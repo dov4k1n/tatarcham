@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="adjective">Сыйфат</string>
+    <string name="adjective_subheading">Предметның билгесен, нинди булуын белдерә</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="adjective_ezafe">Изафетлар</string>
+    <string name="adjective_degrees_of_comparison">Чагыштыру дәрәҗәләре</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="adjective_ezafe_description"></string>
+    <string name="adjective_degrees_of_comparison_description"></string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pronoun">Местоимение</string>
+    <string name="pronouns_subheading">Заменяет существительное, прилагательное, числительное и наречие</string>
+
+    <string name="pronoun_possessive">Притяжательные местоимения</string>
+    <string name="pronoun_demonstrative">Указательные местоимения</string>
+    <string name="pronoun_interrogative">Вопросительные местоимения</string>
+    <string name="pronoun_determinative">Определительные местоимения</string>
+    <string name="pronoun_indefinite">Неопределённые местоимения</string>
+    <string name="pronoun_negative">Отрицательные местоимения</string>
+
+    <string name="pronoun_possessive_description"></string>
+    <string name="pronoun_demonstrative_description"></string>
+    <string name="pronoun_interrogative_description"></string>
+    <string name="pronoun_determinative_description"></string>
+    <string name="pronoun_indefinite_description"></string>
+    <string name="pronoun_negative_description"></string>
+</resources>

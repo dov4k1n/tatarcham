@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lexicon">Лексика</string>
+    <string name="lexicon_subheading">Гомуми мәгълүмат</string>
+
+    <string name="training">Күнекмә</string>
+    <string name="training_subheading">Аралыклы кабатлаулар</string>
+    <string name="cards">Карточкалар</string>
+    <string name="matches">Парлар</string>
+
+    <string name="dictionary">Сүзлек</string>
+    <string name="explore_new_words">Яңа сүзләрне карагыз</string>
+    <string name="swadesh_list">Сводеш исемлеге</string>
+    <string name="top_words">Төп сүзләр</string>
+    <string name="top_verbs">Төп фигыльләр</string>
+    <string name="top_nouns">Төп исемнәр</string>
+    <string name="top_adjectives">Төп сыйфатлар</string>
+    <string name="people">Кешеләр</string>
+    <string name="animals">Хайваннар</string>
+    <string name="food">Ашамлыклар</string>
+    <string name="professions">Һөнәрләр</string>
+
+    <string name="words_207">207 сүз</string>
+    <string name="words_1000">1000 сүз</string>
+    <string name="words_100">100 сүз</string>
+    <string name="words_25">25 сүз</string>
+    <string name="words_40">40 сүз</string>
+    <string name="words_50">50 сүз</string>
+    <string name="words_30">30 сүз</string>
+</resources>

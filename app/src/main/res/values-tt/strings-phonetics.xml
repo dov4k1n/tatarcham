@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phonetics">Фонетика</string>
+    <string name="phonetics_subheading">Татар теленең хәрефләре һәм авазлары</string>
+
+    <string name="harmonies">Гармонияләр</string>
+    <string name="harmonies_subheading">Тартык һәм сузыкларның охшашулары</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="vowel_harmony">Рәт гармониясе</string>
+    <string name="rounding_harmony">Ирен гармониясе</string>
+    <string name="hard_soft_k_g">Калын һәм нечкә К, Г</string>
+    <string name="voicing_k_p">К, П чиратлашулары</string>
+    <string name="diftongs">Дифтонглар</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="vowel_harmony_description"></string>
+    <string name="rounding_harmony_description"></string>
+    <string name="hard_soft_k_g_description"></string>
+    <string name="voicing_k_p_description"></string>
+    <string name="diftongs_description"></string>
+
+</resources>

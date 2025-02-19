@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">tatarçam</string>
+    <string name="language">Тел</string>
+
+    <string name="under_development">Бу бүлек эшләнештә</string>
+    <string name="report_mistake">Хата турында хәбәр итәргә</string>
+    <string name="open_link">Сылтама ачу</string>
+    <string name="open_donation_page">Иганә битен ачу ♥️</string>
+    <string name="open_website">Сайтны ачу</string>
+    <string name="open_telegram_channel">Телеграм каналны ачу</string>
+    <string name="open_link_question">Сез бу сылтаманы ачырга телисезме?</string>
+    <string name="cancel">Кире кагу</string>
+    <string name="open">Ачу</string>
+
+    <string name="bottom_bar_phonetics">Фонетика</string>
+    <string name="bottom_bar_lexicon">Лексика</string>
+    <string name="bottom_bar_morphology">Морфология</string>
+    <string name="bottom_bar_syntax">Синтаксис</string>
+    <string name="bottom_bar_culture">Мәдәният</string>
+
+    <string name="profile">Сәхифә</string>
+    <string name="statistics">Статистика</string>
+    <string name="web">Сайт</string>
+    <string name="community">Берләшмә</string>
+    <string name="settings">Көйләүләр</string>
+    <string name="invite_friends">Дусларны чакыру</string>
+    <string name="help">Ярдәм</string>
+    <string name="about_app">Приложение турында</string>
+    <string name="support_developers">Ясаучыларга булышу</string>
+    <string name="version">Tatarçam Андроид өчен v%s</string>
+
+    <string name="friendly_marketing_text">Татар телен монда өйрәнәм, бик кызык!\nhttps://t.me/tatar_app</string>
+
+    <string name="about">Турында:\n</string>
+    <string name="more">Өстәмә</string>
+    <string name="play">БАШЛАУ</string>
+
+    <string name="score">Дөрес җаваплар: %d (%d%%)</string>
+    <string name="verb_task_message">Фигыльне бу формага куегыз</string>
+    <string name="non_verb_task_message">Сүзне бу формага куегыз</string>
+    <string name="wrong_guess">Абау!</string>
+    <string name="enter_your_word">Җавапны языгыз</string>
+    <string name="your_wrong_type">Сез яздыгыз: %s</string>
+    <string name="submit">Җавап бирү</string>
+    <string name="skip">Калдыру</string>
+
+    <string name="gotcha">Әә, менә хәзер аңлашылды.</string>
+
+    <string name="session_stats_share_title">Сессия нәтиҗәләре белән бүлешергә</string>
+    <string name="session_stats_share_message">Мин %d бирем чиштем, %d%% дөрес җавап! Әйдәгез татар телен өйрәнергә! 💙 https://t.me/tatar_app</string>
+
+    <string name="congratulations">Афәрин!</string>
+    <string name="you_scored">Сез %d дөрес җавап бирдегез!</string>
+    <string name="play_again">Тагын эшләп карау</string>
+    <string name="exit">Чыгу</string>
+
+    <string name="introduction">Кереш</string>
+    <string name="introduction_subheading">Морфология һәм гомумән татар теле турында</string>
+
+    <string name="person_tat">Зат</string>
+    <string name="person_eng"/>
+    <string name="pronouns_personal_tat">мин\nсин\nул\nбез\nсез\nалар</string>
+    <string name="pronouns_personal"/>
+    <string name="affix">Кушымча</string>
+    <string name="formation_of_the_conjugated_stem">Нигез ясалышы:</string>
+    <string name="examples">Мисаллар:</string>
+    <string name="hard_hard_soft_soft">
+        Тамырның соңгы сузыгы калынмы? \n –> калын сузыклы кушымчаны ялгагыз\n\n
+        Тамырның соңгы сузыгы нечкәме? \n –> нечкә сузыклы кушымчаны ялгагыз
+    </string>
+</resources>

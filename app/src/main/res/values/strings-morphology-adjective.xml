@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="adjective">Adjective</string>
+    <string name="adjective_subheading">Denotes the quality, property or belonging of an object</string>
+
+    <!-- LEVEL NAMES -->
+    <string name="adjective_ezafe">Ezafe</string>
+    <string name="adjective_degrees_of_comparison">Degrees of Comparison</string>
+
+    <!-- LEVEL DESCRIPTIONS -->
+    <string name="adjective_ezafe_description"></string>
+    <string name="adjective_degrees_of_comparison_description"></string>
+
+</resources>
