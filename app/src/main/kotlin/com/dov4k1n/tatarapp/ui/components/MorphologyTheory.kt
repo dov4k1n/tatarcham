@@ -1,13 +1,18 @@
 package com.dov4k1n.tatarapp.ui.components
 
+import android.content.Context
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
@@ -15,6 +20,42 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
+import dev.jeziellago.compose.markdowntext.MarkdownText
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
+
+@Composable
+fun assetFileReader(context: Context, fileName: String): String {
+    val assetManager = context.assets
+    val bufferedReader = BufferedReader(InputStreamReader(assetManager.open(fileName)))
+    val content = buildString {
+        var line: String?
+        while (bufferedReader.readLine().also { line = it } != null) {
+            append(line)
+            append("\n")
+        }
+    }
+    bufferedReader.close()
+    return content
+}
+
+@Preview
+@Composable
+fun MDExample() {
+    val context = LocalContext.current
+    val markdownContent = assetFileReader(context, "present.md")
+    TatarAppTheme(useDarkTheme = true) {
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+            val x = innerPadding
+            MarkdownText(
+                markdown = markdownContent,
+                syntaxHighlightColor = Color(0xFF191F26),
+                syntaxHighlightTextColor = Color(0xFFFFB454)
+            )
+        }
+    }
+}
 
 
 @Preview

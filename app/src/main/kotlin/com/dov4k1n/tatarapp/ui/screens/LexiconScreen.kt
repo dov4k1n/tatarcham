@@ -55,7 +55,7 @@ fun LexiconScreen(
                 heading = stringResource(id = R.string.lexicon),
                 headingColor = colorScheme.inversePrimary,
                 subheading = stringResource(id = R.string.lexicon_subheading),
-                modifier = Modifier.padding(bottom = 24.dp)
+                modifier = Modifier.padding(bottom = 8.dp)
             )
         }
 
