@@ -1,7 +1,5 @@
-package com.dov4k1n.tatarapp.ui.screens
+package com.dov4k1n.tatarapp.ui.screens.morphology
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -9,7 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.DoubleArrow
 import androidx.compose.material.icons.outlined.Scale
 import androidx.compose.material.icons.outlined.SensorOccupied
-import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -44,9 +42,9 @@ fun MorphologyScreen(
             TheoryBlock(
                 icon = BottomAppBarItems.Morphology.selectedIcon,
                 heading = stringResource(R.string.bottom_bar_morphology),
-                headingColor = colorScheme.onSecondary,
+                headingColor = MaterialTheme.colorScheme.onSecondary,
                 subheading = stringResource(id = R.string.introduction_subheading),
-                modifier = Modifier
+                modifier = Modifier.Companion
                     .padding(bottom = 8.dp)
             )
         }
@@ -56,7 +54,7 @@ fun MorphologyScreen(
             TheoryBlock(
                 icon = Icons.Outlined.DoubleArrow,
                 heading = stringResource(id = R.string.verb),
-                headingColor = colorScheme.onSecondary,
+                headingColor = MaterialTheme.colorScheme.onSecondary,
                 subheading = stringResource(id = R.string.verb_subheading),
             )
         }
@@ -67,32 +65,32 @@ fun MorphologyScreen(
             when (it.id) {
                 1 -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
                     )
                 }
 
                 sectionVerb.size -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
-                        modifier = Modifier.padding(bottom = 2.dp)
+                        modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
                 }
             }
@@ -103,7 +101,7 @@ fun MorphologyScreen(
             TheoryBlock(
                 icon = Icons.Outlined.SensorOccupied,
                 heading = stringResource(id = R.string.noun),
-                headingColor = colorScheme.onSecondary,
+                headingColor = MaterialTheme.colorScheme.onSecondary,
                 subheading = stringResource(id = R.string.noun_subheading),
             )
         }
@@ -114,32 +112,32 @@ fun MorphologyScreen(
             when (it.id) {
                 1 -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
                     )
                 }
 
                 sectionNoun.size -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
-                        modifier = Modifier.padding(bottom = 2.dp)
+                        modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
                 }
             }
@@ -149,7 +147,7 @@ fun MorphologyScreen(
             TheoryBlock(
                 icon = Icons.Outlined.Scale,
                 heading = stringResource(id = R.string.adjective),
-                headingColor = colorScheme.onSecondary,
+                headingColor = MaterialTheme.colorScheme.onSecondary,
                 subheading = stringResource(id = R.string.adjective_subheading),
             )
         }
@@ -160,32 +158,32 @@ fun MorphologyScreen(
             when (it.id) {
                 1 -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
                     )
                 }
 
                 sectionAdjective.size -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
                     NewLevelItem(
-                        playArrowColor = colorScheme.onSecondary,
+                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
                         onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
-                        modifier = Modifier.padding(bottom = 2.dp)
+                        modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
                 }
             }

@@ -1,4 +1,4 @@
-package com.dov4k1n.tatarapp.ui.screens
+package com.dov4k1n.tatarapp.ui.screens.lexicon
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,7 +17,7 @@ import androidx.compose.material.icons.outlined.ModelTraining
 import androidx.compose.material.icons.outlined.Style
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -46,16 +46,16 @@ fun PreviewLexiconScreen() {
 
 @Composable
 fun LexiconScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.Companion
 ) {
     LazyColumn {
         item {
             TheoryBlock(
                 icon = Icons.Outlined.Fingerprint,
                 heading = stringResource(id = R.string.lexicon),
-                headingColor = colorScheme.inversePrimary,
+                headingColor = MaterialTheme.colorScheme.inversePrimary,
                 subheading = stringResource(id = R.string.lexicon_subheading),
-                modifier = Modifier.padding(bottom = 8.dp)
+                modifier = Modifier.Companion.padding(bottom = 8.dp)
             )
         }
 
@@ -64,19 +64,19 @@ fun LexiconScreen(
             IntervalTrainingBlock(
                 icon = Icons.Outlined.ModelTraining,
                 heading = stringResource(id = R.string.training),
-                headingColor = colorScheme.inversePrimary,
+                headingColor = MaterialTheme.colorScheme.inversePrimary,
                 subheading = stringResource(id = R.string.training_subheading),
-                modifier = Modifier
+                modifier = Modifier.Companion
             )
         }
         item {
             NonExpandableLevelItem(
                 levelHeading = stringResource(id = R.string.cards),
                 itemIcon = Icons.Outlined.Style,
-                itemIconColor = colorScheme.inversePrimary,
+                itemIconColor = MaterialTheme.colorScheme.inversePrimary,
                 onPlayButtonClicked = { },
                 shape = ListItemShape.small,
-                modifier = Modifier
+                modifier = Modifier.Companion
                     .padding(bottom = 2.dp)
             )
         }
@@ -84,10 +84,10 @@ fun LexiconScreen(
             NonExpandableLevelItem(
                 levelHeading = stringResource(id = R.string.matches),
                 itemIcon = Icons.Outlined.Dashboard,
-                itemIconColor = colorScheme.inversePrimary,
+                itemIconColor = MaterialTheme.colorScheme.inversePrimary,
                 onPlayButtonClicked = { },
                 shape = ListItemShape.large,
-                modifier = Modifier.padding(bottom = 8.dp)
+                modifier = Modifier.Companion.padding(bottom = 8.dp)
             )
         }
 
@@ -97,14 +97,14 @@ fun LexiconScreen(
                 icon = Icons.Outlined.Explore,
                 heading = stringResource(id = R.string.dictionary),
                 subheading = stringResource(id = R.string.explore_new_words),
-                headingColor = colorScheme.inversePrimary,
-                modifier = Modifier.clickable { /*TODO*/ }
+                headingColor = MaterialTheme.colorScheme.inversePrimary,
+                modifier = Modifier.Companion.clickable { /*TODO*/ }
             ) {
                 IconButton(onClick = { /*TODO*/ }) {
                     Icon(
                         imageVector = Icons.Outlined.Add,
                         contentDescription = null,
-                        tint = colorScheme.inversePrimary
+                        tint = MaterialTheme.colorScheme.inversePrimary
                     )
                 }
             }
@@ -119,10 +119,10 @@ fun LexiconScreen(
                         levelHeading = stringResource(id = it.nameAddress),
                         levelSubheading = stringResource(id = it.moreDescription),
                         itemIcon = it.icon,
-                        itemIconColor = colorScheme.inversePrimary,
+                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
                         onPlayButtonClicked = { },
                         shape = ListItemShape.small,
-                        modifier = Modifier
+                        modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
                     )
                 }
@@ -132,10 +132,10 @@ fun LexiconScreen(
                         levelHeading = stringResource(id = it.nameAddress),
                         levelSubheading = stringResource(id = it.moreDescription),
                         itemIcon = it.icon,
-                        itemIconColor = colorScheme.inversePrimary,
+                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
                         onPlayButtonClicked = { },
                         shape = ListItemShape.large,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
@@ -144,10 +144,10 @@ fun LexiconScreen(
                         levelHeading = stringResource(id = it.nameAddress),
                         levelSubheading = stringResource(id = it.moreDescription),
                         itemIcon = it.icon,
-                        itemIconColor = colorScheme.inversePrimary,
+                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
                         onPlayButtonClicked = { },
                         shape = ListItemShape.medium,
-                        modifier = Modifier.padding(bottom = 2.dp)
+                        modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
                 }
             }
@@ -160,13 +160,13 @@ fun OldLexiconScreen(
 
 ) {
     LazyColumn(
-        modifier = Modifier.padding(vertical = 4.dp)
+        modifier = Modifier.Companion.padding(vertical = 4.dp)
     ) {
         items(1) {
             Text(
                 text = "Lexicon250",
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center
+                fontWeight = FontWeight.Companion.Bold,
+                textAlign = TextAlign.Companion.Center
             )
         }
         items(
@@ -176,30 +176,30 @@ fun OldLexiconScreen(
             }
         ) {
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.Companion.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 // Left Half
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.Companion
                         .weight(1f)
                         .padding(end = 4.dp)
                 ) {
                     Text(
                         text = it.word,
-                        textAlign = TextAlign.Start
+                        textAlign = TextAlign.Companion.Start
                     )
                 }
 
                 // Right Half
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.Companion
                         .weight(1f)
                         .padding(start = 4.dp)
                 ) {
                     Text(
                         text = it.ruTranslation,
-                        textAlign = TextAlign.Start
+                        textAlign = TextAlign.Companion.Start
                     )
                 }
             }

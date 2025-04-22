@@ -1,4 +1,4 @@
-package com.dov4k1n.tatarapp.ui.screens
+package com.dov4k1n.tatarapp.ui.screens.phonetics
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -7,7 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.MusicNote
-import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -34,16 +34,16 @@ fun PhoneticsScreen(
     onPlayButtonClicked: (Int) -> Unit = {}
 ) {
     Column(
-        modifier = Modifier.padding(bottom = 8.dp)
+        modifier = Modifier.Companion.padding(bottom = 8.dp)
     ) {
         LazyColumn {
             item {
                 TheoryBlock(
                     icon = BottomAppBarItems.Phonetics.selectedIcon,
                     heading = stringResource(R.string.bottom_bar_phonetics),
-                    headingColor = colorScheme.onError,
+                    headingColor = MaterialTheme.colorScheme.onError,
                     subheading = stringResource(id = R.string.phonetics_subheading),
-                    modifier = Modifier
+                    modifier = Modifier.Companion
                         .padding(bottom = 8.dp)
                 )
             }
@@ -53,9 +53,9 @@ fun PhoneticsScreen(
                 TheoryBlock(
                     icon = Icons.Outlined.MusicNote,
                     heading = stringResource(id = R.string.harmonies),
-                    headingColor = colorScheme.onError,
+                    headingColor = MaterialTheme.colorScheme.onError,
                     subheading = stringResource(id = R.string.harmonies_subheading),
-                    modifier = Modifier
+                    modifier = Modifier.Companion
                 )
             }
             items(
@@ -65,18 +65,18 @@ fun PhoneticsScreen(
                 when (it.id) {
                     1 -> {
                         NewLevelItem(
-                            playArrowColor = colorScheme.onError,
+                            playArrowColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
                             onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.small,
-                            modifier = Modifier
+                            modifier = Modifier.Companion
                                 .padding(bottom = 2.dp)
                         )
                     }
 
                     sectionHarmonies.size -> {
                         NewLevelItem(
-                            playArrowColor = colorScheme.onError,
+                            playArrowColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
                             onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.large
@@ -85,16 +85,16 @@ fun PhoneticsScreen(
 
                     else -> {
                         NewLevelItem(
-                            playArrowColor = colorScheme.onError,
+                            playArrowColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
                             onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.medium,
-                            modifier = Modifier.padding(bottom = 2.dp)
+                            modifier = Modifier.Companion.padding(bottom = 2.dp)
                         )
                     }
                 }
             }
         }
-    Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.Companion.weight(1f))
     }
 }

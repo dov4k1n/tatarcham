@@ -54,7 +54,7 @@ fun SupportDevelopersButton(
             disabledContentColor = colorScheme.onError,
             disabledContainerColor = colorScheme.onError
         ),
-        modifier = modifier.padding(horizontal = 16.dp)
+        modifier = modifier.padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically

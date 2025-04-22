@@ -70,8 +70,6 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation (libs.accompanist.systemuicontroller)
 
-    implementation(libs.androidx.datastore.preferences)
-
     implementation(libs.compose.markdown)
 
 }

@@ -28,7 +28,7 @@ import com.dov4k1n.tatarapp.ui.components.ConjugationCard
 import com.dov4k1n.tatarapp.ui.components.ProgressBarTimeAndStatistics
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 import com.dov4k1n.tatarapp.ui.viewmodel.ConjugationViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.PresentViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PresentViewModel
 import kotlinx.coroutines.delay
 import kotlin.time.Duration.Companion.seconds
 
@@ -51,11 +51,11 @@ fun PreviewConjugationScreen() {
 
 @Composable
 fun ConjugationScreen(
-    levelName: String = "",
     taskMessage: String,
+    modifier: Modifier = Modifier,
+    levelName: String = "",
     theory: Int = R.string.empty_string,
     newTheory: @Composable () -> Unit = {},
-    modifier: Modifier = Modifier,
     viewModel: ConjugationViewModel = viewModel(),
     skipPrefix: Boolean = false
 ) {

@@ -16,23 +16,23 @@ import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.BottomAppBarItems
 import com.dov4k1n.tatarapp.data.MorphologyScreen
 import com.dov4k1n.tatarapp.data.NavigationDrawerItems
-import com.dov4k1n.tatarapp.ui.screens.CultureScreen
-import com.dov4k1n.tatarapp.ui.screens.LexiconScreen
-import com.dov4k1n.tatarapp.ui.screens.MorphologyScreen
-import com.dov4k1n.tatarapp.ui.screens.NounPluralScreen
-import com.dov4k1n.tatarapp.ui.screens.PhoneticsScreen
-import com.dov4k1n.tatarapp.ui.screens.SomeScreen
-import com.dov4k1n.tatarapp.ui.screens.SyntaxScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbDefiniteFutureScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbDefinitePastScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbFutureInThePastScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbGerundScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbIndefiniteFutureScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbIndefinitePastScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbInfinitiveScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbPastContinuousScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbPastPerfectScreen
-import com.dov4k1n.tatarapp.ui.screens.VerbPresentScreen
+import com.dov4k1n.tatarapp.ui.screens.culture.CultureScreen
+import com.dov4k1n.tatarapp.ui.screens.lexicon.LexiconScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.MorphologyScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.NounPluralScreen
+import com.dov4k1n.tatarapp.ui.screens.phonetics.PhoneticsScreen
+import com.dov4k1n.tatarapp.ui.screens.UnderDevelopmentScreen
+import com.dov4k1n.tatarapp.ui.screens.syntax.SyntaxScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbDefiniteFutureScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbDefinitePastScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbFutureInThePastScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbGerundScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbIndefiniteFutureScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbIndefinitePastScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbInfinitiveScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastContinuousScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastPerfectScreen
+import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPresentScreen
 
 @Composable
 fun TabsNavGraph(
@@ -107,38 +107,33 @@ fun TabsNavGraph(
         composable(route = BottomAppBarItems.Culture.route) {
             CultureScreen()
         }
-        composable(route = NavigationDrawerItems.Profile.route) {
-            SomeScreen(
-                name = stringResource(NavigationDrawerItems.Profile.title)
-            )
-        }
         composable(route = NavigationDrawerItems.Statistics.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.Statistics.title)
             )
         }
         composable(route = NavigationDrawerItems.Web.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.Web.title)
             )
         }
         composable(route = NavigationDrawerItems.Community.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.Community.title)
             )
         }
         composable(route = NavigationDrawerItems.Settings.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.Settings.title)
             )
         }
         composable(route = NavigationDrawerItems.InviteFriends.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.InviteFriends.title)
             )
         }
         composable(route = NavigationDrawerItems.AboutApp.route) {
-            SomeScreen(
+            UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.AboutApp.title)
             )
         }

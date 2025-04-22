@@ -26,12 +26,12 @@ import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 @Composable
 fun PreviewUnderDevelopmentScreen() {
     TatarAppTheme(useDarkTheme = true) {
-        SomeScreen("screen name")
+        UnderDevelopmentScreen("screen name")
     }
 }
 
 @Composable
-fun SomeScreen(
+fun UnderDevelopmentScreen(
     name: String
 ) {
     Column(

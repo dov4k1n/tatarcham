@@ -1,4 +1,4 @@
-package com.dov4k1n.tatarapp.ui.screens
+package com.dov4k1n.tatarapp.ui.screens.morphology
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
@@ -7,17 +7,17 @@ import com.dov4k1n.tatarapp.ui.components.DefinitePastTheory
 import com.dov4k1n.tatarapp.ui.components.IndefinitePastTheory
 import com.dov4k1n.tatarapp.ui.components.PastContinuousTheory
 import com.dov4k1n.tatarapp.ui.components.PresentTheory
-import com.dov4k1n.tatarapp.ui.viewmodel.DefiniteFutureViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.DefinitePastViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.FutureInThePastViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.GerundViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.IndefiniteFutureViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.IndefinitePastViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.InfinitiveViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.PastContinuousViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.PastPerfectViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.PluralViewModel
-import com.dov4k1n.tatarapp.ui.viewmodel.PresentViewModel
+import com.dov4k1n.tatarapp.ui.screens.ConjugationScreen
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.DefiniteFutureViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.DefinitePastViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.FutureInThePastViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.GerundViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.IndefiniteFutureViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.IndefinitePastViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.InfinitiveViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PastContinuousViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PastPerfectViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PresentViewModel
 
 @Composable
 fun VerbPresentScreen() {
@@ -122,16 +122,5 @@ fun VerbFutureInThePastScreen() {
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = FutureInThePastViewModel(),
         theory = R.string.verb_future_in_the_past_theory
-    )
-}
-
-@Composable
-fun NounPluralScreen() {
-    ConjugationScreen(
-        levelName = stringResource(R.string.noun_plural),
-        taskMessage = stringResource(R.string.non_verb_task_message),
-        viewModel = PluralViewModel(),
-        theory = R.string.noun_plural_theory,
-        skipPrefix = true
     )
 }

@@ -6,6 +6,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import com.dov4k1n.tatarapp.data.local.ThemeMode
 
 private val DarkColors = darkColorScheme(
     primary = Color(0xFFFFFFFF), // main objects and main text
@@ -49,13 +50,15 @@ private val LightColors = lightColorScheme(
 
 @Composable
 fun TatarAppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
+    themeMode: ThemeMode = ThemeMode.System,
+    useDarkTheme: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colors = if (useDarkTheme) {
-        DarkColors
-    } else {
-        LightColors
+
+    val colors = when (themeMode) {
+        ThemeMode.Dark -> DarkColors
+        ThemeMode.Light -> LightColors
+        ThemeMode.System -> if (isSystemInDarkTheme()) DarkColors else LightColors
     }
 
     MaterialTheme(

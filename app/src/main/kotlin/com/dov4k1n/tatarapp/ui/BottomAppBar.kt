@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.dov4k1n.tatarapp.TatarApp
+import com.dov4k1n.tatarapp.MainComposable
 import com.dov4k1n.tatarapp.data.BottomAppBarItems
 import com.dov4k1n.tatarapp.data.MorphologyScreen
 import com.dov4k1n.tatarapp.data.bottomAppBarTabsList
@@ -24,7 +24,7 @@ import com.dov4k1n.tatarapp.data.bottomAppBarTabsList
 @Preview
 @Composable
 fun PreviewBottomAppBar() {
-    TatarApp()
+    MainComposable()
 }
 
 @Composable

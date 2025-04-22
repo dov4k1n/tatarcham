@@ -25,12 +25,7 @@ sealed class NavigationDrawerItems(
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector,
 ) {
-    data object Profile : NavigationDrawerItems(
-        route = "profile",
-        title = R.string.profile,
-        selectedIcon = Icons.Filled.AccountCircle,
-        unselectedIcon = Icons.Outlined.AccountCircle
-    )
+
     data object Statistics : NavigationDrawerItems(
         route = "statistics",
         title = R.string.statistics,
@@ -70,11 +65,10 @@ sealed class NavigationDrawerItems(
 }
 
 val navigationDrawerItemsList = listOf(
-    NavigationDrawerItems.Profile,
     NavigationDrawerItems.Statistics,
-    NavigationDrawerItems.AboutApp,
     NavigationDrawerItems.Settings,
+    NavigationDrawerItems.AboutApp,
     NavigationDrawerItems.InviteFriends,
     NavigationDrawerItems.Community,
-//    NavigationDrawerItems.Web,
+    NavigationDrawerItems.Web,
 )

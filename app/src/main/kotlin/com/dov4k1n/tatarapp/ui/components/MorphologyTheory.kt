@@ -2,7 +2,6 @@ package com.dov4k1n.tatarapp.ui.components
 
 import android.content.Context
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme.colorScheme
@@ -14,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,18 +40,36 @@ fun assetFileReader(context: Context, fileName: String): String {
 
 @Preview
 @Composable
-fun MDExample() {
+fun PreviewDarkMD() {
+    TatarAppTheme() {
+        MDExample()
+    }
+}
+
+@Preview
+@Composable
+fun PreviewLightMD() {
+    TatarAppTheme() {
+        MDExample()
+    }
+}
+
+@Composable
+fun MDExample(
+    fileName: String = "alphabet-latin.md"
+) {
     val context = LocalContext.current
-    val markdownContent = assetFileReader(context, "present.md")
-    TatarAppTheme(useDarkTheme = true) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            val x = innerPadding
-            MarkdownText(
-                markdown = markdownContent,
-                syntaxHighlightColor = Color(0xFF191F26),
-                syntaxHighlightTextColor = Color(0xFFFFB454)
-            )
-        }
+    val markdownContent = assetFileReader(context, fileName)
+    Scaffold() { innerPadding ->
+        val x = innerPadding
+
+    MarkdownText(
+        markdown = markdownContent,
+//        modifier = Modifier.padding(innerPadding),
+        truncateOnTextOverflow = true,
+        syntaxHighlightColor = Color(0xFF191F26),
+        syntaxHighlightTextColor = Color(0xFFFFB454)
+    )
     }
 }
 
@@ -61,7 +77,7 @@ fun MDExample() {
 @Preview
 @Composable
 fun PreviewVerbTheoryWithBase() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme() {
         VerbTheoryWithBase(
             levelName = R.string.verb_present,
             conjugationBaseAffixOne = R.string.verb_present_base_affix_one,
@@ -164,7 +180,7 @@ fun VerbTheoryWithBase(
 @Preview
 @Composable
 fun PreviewPresentTheory() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme() {
         PresentTheory()
     }
 }
@@ -184,7 +200,7 @@ fun PresentTheory() {
 @Preview
 @Composable
 fun PreviewDefinitePastTheory() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme() {
         DefinitePastTheory()
     }
 }
@@ -204,7 +220,7 @@ fun DefinitePastTheory() {
 @Preview
 @Composable
 fun PreviewIndefinitePastTheory() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme() {
         IndefinitePastTheory()
     }
 }
@@ -224,7 +240,7 @@ fun IndefinitePastTheory() {
 @Preview
 @Composable
 fun PreviewPastContinuousTheory() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme() {
         PastContinuousTheory()
     }
 }

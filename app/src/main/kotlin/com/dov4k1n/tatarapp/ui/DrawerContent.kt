@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Android
 import androidx.compose.material.icons.outlined.DarkMode
 import androidx.compose.material.icons.outlined.LightMode
 import androidx.compose.material3.DrawerState
@@ -37,6 +38,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.dov4k1n.tatarapp.R
+import com.dov4k1n.tatarapp.data.local.ThemeMode
 import com.dov4k1n.tatarapp.data.navigationDrawerItemsList
 import com.dov4k1n.tatarapp.ui.components.SupportDevelopersButton
 import kotlinx.coroutines.CoroutineScope
@@ -44,7 +46,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun DrawerContent(
-    useDarkTheme: Boolean,
+    themeMode: ThemeMode,
     onThemeIconClick: () -> Unit,
     scope: CoroutineScope,
     drawerState: DrawerState,
@@ -94,7 +96,11 @@ fun DrawerContent(
                     onClick = onThemeIconClick,
                 ) {
                     Icon(
-                        imageVector = if (useDarkTheme) Icons.Outlined.DarkMode else Icons.Outlined.LightMode,
+                        imageVector = when (themeMode) {
+                            ThemeMode.Light -> Icons.Outlined.LightMode
+                            ThemeMode.Dark -> Icons.Outlined.DarkMode
+                            ThemeMode.System -> Icons.Outlined.Android
+                        },
                         contentDescription = null,
                         tint = colorScheme.onSurfaceVariant
                     )

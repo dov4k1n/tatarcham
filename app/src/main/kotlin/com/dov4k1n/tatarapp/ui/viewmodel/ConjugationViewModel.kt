@@ -16,11 +16,11 @@ open class ConjugationViewModel(
     val wordSet: Set<String>,
     val findCorrectAnswer: (root: String, prefix: String) -> String
 ) : ViewModel() {
+
     private val _uiState = MutableStateFlow(SessionUiState())
     val uiState: StateFlow<SessionUiState> = _uiState.asStateFlow()
 
     private lateinit var currentWord: String
-//    private var usedWords: MutableSet<String> = mutableSetOf()
 
     var userAnswer by mutableStateOf("")
         private set
@@ -29,23 +29,12 @@ open class ConjugationViewModel(
     }
     var previousUserAnswer = ""
 
-    private fun pickRandomWord(): String {
-        currentWord = wordSet.random()
-//        return if (usedWords.contains(currentWord)) {
-//            pickRandomWord()
-//        } else {
-//            usedWords.add(currentWord)
-            return currentWord
-//        }
-    }
-
     private var typedWrong by mutableStateOf(false)
 
     internal fun resetGame() {
-//        usedWords.clear()
         _uiState.value = SessionUiState(
             totalWords = wordSet.size,
-            currentWord = pickRandomWord(),
+            currentWord = wordSet.random(),
             currentPrefix = personalPronouns.random(),
         )
     }
@@ -55,21 +44,11 @@ open class ConjugationViewModel(
     }
 
     private fun updateSessionState(updatedScore: Int) {
-//        if (usedWords.size == MAX_NO_OF_VERBS) {
-//            _uiState.update { currentState ->
-//                currentState.copy(
-//                    totalWords = wordSet.size,
-//                    isTypedAnsWrong = false,
-//                    score = updatedScore,
-//                    isGameOver = true
-//                )
-//            }
-//        } else {
         _uiState.update { currentState ->
             currentState.copy(
                 totalWords = wordSet.size,
                 isTypedAnsWrong = false,
-                currentWord = pickRandomWord(),
+                currentWord = wordSet.random(),
                 currentPrefix = personalPronouns.random(),
                 currentWordCount = currentState.currentWordCount.inc(),
                 score = updatedScore,

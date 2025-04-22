@@ -1,10 +1,9 @@
-package com.dov4k1n.tatarapp.ui.screens
+package com.dov4k1n.tatarapp.ui.screens.syntax
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -26,16 +25,16 @@ fun PreviewSyntaxScreen() {
 @Composable
 fun SyntaxScreen() {
     Column(
-        modifier = Modifier.padding(bottom = 8.dp)
+        modifier = Modifier.Companion.padding(bottom = 8.dp)
     ) {
         LazyColumn {
             item {
                 TheoryBlock(
                     icon = BottomAppBarItems.Syntax.selectedIcon,
                     heading = stringResource(R.string.bottom_bar_syntax),
-                    headingColor = colorScheme.errorContainer,
+                    headingColor = MaterialTheme.colorScheme.errorContainer,
                     subheading = stringResource(id = R.string.syntax_subheading),
-                    modifier = Modifier.padding(bottom = 8.dp)
+                    modifier = Modifier.Companion.padding(bottom = 8.dp)
                 )
             }
         }
