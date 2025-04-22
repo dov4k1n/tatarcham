@@ -127,11 +127,6 @@ fun TabsNavGraph(
                 name = stringResource(NavigationDrawerItems.Settings.title)
             )
         }
-        composable(route = NavigationDrawerItems.InviteFriends.route) {
-            UnderDevelopmentScreen(
-                name = stringResource(NavigationDrawerItems.InviteFriends.title)
-            )
-        }
         composable(route = NavigationDrawerItems.AboutApp.route) {
             UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.AboutApp.title)

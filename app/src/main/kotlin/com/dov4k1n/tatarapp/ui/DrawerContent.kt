@@ -1,6 +1,5 @@
 package com.dov4k1n.tatarapp.ui
 
-import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -30,7 +29,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -54,12 +52,6 @@ fun DrawerContent(
     onCommunityClick: () -> Unit,
     onWebClick: () -> Unit,
 ) {
-    val context = LocalContext.current
-
-    val inviteFriendsIntent = Intent(Intent.ACTION_SEND).apply {
-        type = "text/plain"
-        putExtra(Intent.EXTRA_TEXT, stringResource(R.string.friendly_marketing_text))
-    }
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -143,15 +135,6 @@ fun DrawerContent(
                             "community" -> { onCommunityClick() }
 
                             "web" -> { onWebClick() }
-
-                            "invite_friends" -> {
-                                context.startActivity(
-                                    Intent.createChooser(
-                                        inviteFriendsIntent,
-                                        context.getString(R.string.invite_friends)
-                                    )
-                                )
-                            }
 
                             else -> {
                                 scope.launch {

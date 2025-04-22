@@ -4,16 +4,12 @@ import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Help
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
-import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Forum
-import androidx.compose.material.icons.filled.PersonAdd
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Web
-import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.BarChart
 import androidx.compose.material.icons.outlined.Forum
-import androidx.compose.material.icons.outlined.PersonAdd
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Web
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -50,12 +46,6 @@ sealed class NavigationDrawerItems(
         selectedIcon = Icons.Filled.Settings,
         unselectedIcon = Icons.Outlined.Settings
     )
-    data object InviteFriends : NavigationDrawerItems(
-        route = "invite_friends",
-        title = R.string.invite_friends,
-        selectedIcon = Icons.Filled.PersonAdd,
-        unselectedIcon = Icons.Outlined.PersonAdd
-    )
     data object AboutApp : NavigationDrawerItems(
         route = "about_app",
         title = R.string.about_app,
@@ -68,7 +58,6 @@ val navigationDrawerItemsList = listOf(
     NavigationDrawerItems.Statistics,
     NavigationDrawerItems.Settings,
     NavigationDrawerItems.AboutApp,
-    NavigationDrawerItems.InviteFriends,
     NavigationDrawerItems.Community,
     NavigationDrawerItems.Web,
 )
