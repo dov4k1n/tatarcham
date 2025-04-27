@@ -16,6 +16,7 @@ import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.BottomAppBarItems
 import com.dov4k1n.tatarapp.data.MorphologyScreen
 import com.dov4k1n.tatarapp.data.NavigationDrawerItems
+import com.dov4k1n.tatarapp.ui.screens.AboutAppScreen
 import com.dov4k1n.tatarapp.ui.screens.culture.CultureScreen
 import com.dov4k1n.tatarapp.ui.screens.lexicon.LexiconScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.MorphologyScreen
@@ -112,25 +113,13 @@ fun TabsNavGraph(
                 name = stringResource(NavigationDrawerItems.Statistics.title)
             )
         }
-        composable(route = NavigationDrawerItems.Web.route) {
-            UnderDevelopmentScreen(
-                name = stringResource(NavigationDrawerItems.Web.title)
-            )
-        }
-        composable(route = NavigationDrawerItems.Community.route) {
-            UnderDevelopmentScreen(
-                name = stringResource(NavigationDrawerItems.Community.title)
-            )
-        }
         composable(route = NavigationDrawerItems.Settings.route) {
             UnderDevelopmentScreen(
                 name = stringResource(NavigationDrawerItems.Settings.title)
             )
         }
         composable(route = NavigationDrawerItems.AboutApp.route) {
-            UnderDevelopmentScreen(
-                name = stringResource(NavigationDrawerItems.AboutApp.title)
-            )
+            AboutAppScreen()
         }
     }
 }

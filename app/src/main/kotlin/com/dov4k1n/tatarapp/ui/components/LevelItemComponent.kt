@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.outlined.Code
 import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Card
@@ -64,6 +65,20 @@ fun PreviewNewLevelItem() {
     }
 }
 
+@Preview
+@Composable
+fun PreviewNonExpandableLevelItem() {
+    TatarAppTheme(useDarkTheme = true) {
+        NonExpandableLevelItem(
+            levelHeading = "Source code",
+            itemIcon = Icons.Outlined.Code,
+            itemIconColor = colorScheme.primary,
+            shape = ListItemShape.small,
+            onPlayButtonClicked = {}
+        )
+    }
+}
+
 @Composable
 fun NonExpandableLevelItem(
     levelHeading: String,
@@ -77,7 +92,9 @@ fun NonExpandableLevelItem(
 ) {
     Card(
         shape = shape,
-        modifier = modifier.padding(horizontal = 16.dp)
+        modifier = modifier
+            .padding(horizontal = 16.dp)
+            .clickable { onPlayButtonClicked() }
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -105,7 +122,7 @@ fun NonExpandableLevelItem(
                     text = levelHeading,
                     style = typography.bodyMedium,
                     color = Color(0xFFFFFFFF),
-                    maxLines = 1,
+                    maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )
                 if (levelSubheading.isNotEmpty()) {

@@ -28,18 +28,6 @@ sealed class NavigationDrawerItems(
         selectedIcon = Icons.Filled.BarChart,
         unselectedIcon = Icons.Outlined.BarChart
     )
-    data object Web : NavigationDrawerItems(
-        route = "web",
-        title = R.string.web,
-        selectedIcon = Icons.Filled.Web,
-        unselectedIcon = Icons.Outlined.Web
-    )
-    data object Community : NavigationDrawerItems(
-        route = "community",
-        title = R.string.community,
-        selectedIcon = Icons.Filled.Forum,
-        unselectedIcon = Icons.Outlined.Forum
-    )
     data object Settings : NavigationDrawerItems(
         route = "settings",
         title = R.string.settings,
@@ -52,12 +40,28 @@ sealed class NavigationDrawerItems(
         selectedIcon = Icons.AutoMirrored.Filled.Help,
         unselectedIcon = Icons.AutoMirrored.Outlined.HelpOutline
     )
+    data object Links : NavigationDrawerItems(
+        route = "links",
+        title = R.string.links,
+        selectedIcon = Icons.Filled.Forum,
+        unselectedIcon = Icons.Outlined.Forum
+    )
+    data object Web : NavigationDrawerItems(
+        route = "web",
+        title = R.string.web,
+        selectedIcon = Icons.Filled.Web,
+        unselectedIcon = Icons.Outlined.Web
+    )
+    data object Community : NavigationDrawerItems(
+        route = "community",
+        title = R.string.community,
+        selectedIcon = Icons.Filled.Forum,
+        unselectedIcon = Icons.Outlined.Forum
+    )
 }
 
 val navigationDrawerItemsList = listOf(
     NavigationDrawerItems.Statistics,
     NavigationDrawerItems.Settings,
     NavigationDrawerItems.AboutApp,
-    NavigationDrawerItems.Community,
-    NavigationDrawerItems.Web,
 )

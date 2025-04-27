@@ -47,24 +47,6 @@ fun MainComposable(
 
     TatarAppTheme(themeMode) {
 
-        var openCommunityDialog by remember { mutableStateOf(false) }
-        if (openCommunityDialog) {
-            OpenLinkDialog(
-                title = stringResource(R.string.open_telegram_channel),
-                link = stringResource(R.string.telegram_channel_link),
-                onDismissRequest = { openCommunityDialog = false }
-            )
-        }
-
-        var openWebsiteDialog by remember { mutableStateOf(false) }
-        if (openWebsiteDialog) {
-            OpenLinkDialog(
-                title = stringResource(R.string.open_website),
-                link = stringResource(R.string.website_link),
-                onDismissRequest = { openWebsiteDialog = false }
-            )
-        }
-
         var choseLanguage by remember { mutableStateOf(false) }
         if (choseLanguage) {
             LanguageChooserDialog(
@@ -92,8 +74,6 @@ fun MainComposable(
                         scope = scope,
                         drawerState = drawerState,
                         navController = navController,
-                        onCommunityClick = { openCommunityDialog = true },
-                        onWebClick = { openWebsiteDialog = true }
                     )
                 },
                 scrimColor = Color(0xBF000000),

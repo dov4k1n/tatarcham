@@ -7,11 +7,21 @@
     <string name="report_mistake">Хата турында хәбәр итәргә</string>
     <string name="open_link">Сылтама ачу</string>
     <string name="open_donation_page">Иганә битен ачу ♥️</string>
+    <string name="open_source_code">Чыганак кодын ачу</string>
+    <string name="open_github_issues">GitHub Issues\'ны ачу</string>
+    <string name="open_privacy_policy">Конфиденциаль политиаксын ачу</string>
     <string name="open_website">Сайтны ачу</string>
     <string name="open_telegram_channel">Телеграм каналны ачу</string>
     <string name="open_link_question">Сез бу сылтаманы ачырга телисезме?</string>
     <string name="cancel">Кире кагу</string>
     <string name="open">Ачу</string>
+
+    <string name="app_description">Татарчам - татар телен өйрәнү өчен азат һәм ачык чыганаклы мобиль кушымта.</string>
+    <string name="source_code">Чыганак коды</string>
+    <string name="report_bug_or_suggest_improvements">Хаталар турында хәбәр итү яки яхшырту тәкъдим итү</string>
+    <string name="privacy_policy">Конфиденциаль политикасы</string>
+    <string name="share_app">Бу кушымта белән бүлешү</string>
+    <string name="share_app_message">Татар телен монда өйрәнәм, бик кызык!\nhttps://t.me/tatar_app</string>
 
     <string name="bottom_bar_phonetics">Фонетика</string>
     <string name="bottom_bar_lexicon">Лексика</string>
@@ -19,18 +29,17 @@
     <string name="bottom_bar_syntax">Синтаксис</string>
     <string name="bottom_bar_culture">Мәдәният</string>
 
-    <string name="profile">Сәхифә</string>
     <string name="statistics">Статистика</string>
     <string name="web">Сайт</string>
-    <string name="community">Берләшмә</string>
+    <string name="community">Телеграм канал</string>
     <string name="settings">Көйләүләр</string>
+    <string name="links">Сылтамалар</string>
     <string name="invite_friends">Дусларны чакыру</string>
     <string name="help">Ярдәм</string>
     <string name="about_app">Приложение турында</string>
     <string name="support_developers">Ясаучыларга булышу</string>
-    <string name="version">Tatarçam Андроид өчен v%s</string>
+    <string name="version">Версия</string>
 
-    <string name="friendly_marketing_text">Татар телен монда өйрәнәм, бик кызык!\nhttps://t.me/tatar_app</string>
 
     <string name="about">Турында:\n</string>
     <string name="more">Өстәмә</string>
