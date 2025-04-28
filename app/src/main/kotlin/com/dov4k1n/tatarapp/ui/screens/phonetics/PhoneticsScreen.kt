@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.BottomAppBarItems
 import com.dov4k1n.tatarapp.data.sectionHarmonies
-import com.dov4k1n.tatarapp.ui.components.NewLevelItem
+import com.dov4k1n.tatarapp.ui.components.ExpandableListItem
 import com.dov4k1n.tatarapp.ui.components.TheoryBlock
 import com.dov4k1n.tatarapp.ui.theme.ListItemShape
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
@@ -64,10 +64,10 @@ fun PhoneticsScreen(
             ) {
                 when (it.id) {
                     1 -> {
-                        NewLevelItem(
-                            playArrowColor = MaterialTheme.colorScheme.onError,
+                        ExpandableListItem(
+                            iconColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
-                            onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.small,
                             modifier = Modifier.Companion
                                 .padding(bottom = 2.dp)
@@ -75,19 +75,19 @@ fun PhoneticsScreen(
                     }
 
                     sectionHarmonies.size -> {
-                        NewLevelItem(
-                            playArrowColor = MaterialTheme.colorScheme.onError,
+                        ExpandableListItem(
+                            iconColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
-                            onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.large
                         )
                     }
 
                     else -> {
-                        NewLevelItem(
-                            playArrowColor = MaterialTheme.colorScheme.onError,
+                        ExpandableListItem(
+                            iconColor = MaterialTheme.colorScheme.onError,
                             sectionData = it,
-                            onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
                             shape = ListItemShape.medium,
                             modifier = Modifier.Companion.padding(bottom = 2.dp)
                         )

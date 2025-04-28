@@ -18,10 +18,11 @@
 
     <string name="app_description">Татарчам это свободное и открытое мобильное приложение для изучения татарского языка, на котором в основном говорят татары Татарстана, Россия.</string>
     <string name="source_code">Исходный код</string>
+    <string name="source_code_license">На GitHub по лицензии GPL 3.0</string>
     <string name="report_bug_or_suggest_improvements">Сообщить об ошибке или предложить улучшения</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="share_app">Поделиться этим приложением</string>
-    <string name="share_app_message">Учу татарский язык здесь, очень интересно!\nhttps://t.me/tatar_app</string>
+    <string name="share_app_message">Учу татарский язык здесь, очень интересно!\nhttps://dov4k1n.github.io</string>
 
     <string name="bottom_bar_phonetics">Фонетика</string>
     <string name="bottom_bar_lexicon">Лексика</string>

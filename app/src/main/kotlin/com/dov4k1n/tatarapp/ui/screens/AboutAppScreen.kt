@@ -35,7 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.local.ThemeMode
-import com.dov4k1n.tatarapp.ui.components.NonExpandableLevelItem
+import com.dov4k1n.tatarapp.ui.components.NonExpandableListItem
 import com.dov4k1n.tatarapp.ui.components.OpenLinkDialog
 import com.dov4k1n.tatarapp.ui.components.SupportDevelopersButton
 import com.dov4k1n.tatarapp.ui.theme.ListItemShape
@@ -52,6 +52,8 @@ fun PreviewAboutAppScreen() {
 
 @Composable
 fun AboutAppScreen() {
+
+    val iconsColor = colorScheme.onBackground
 
     var openSourceCodeDialog by remember { mutableStateOf(false) }
     if (openSourceCodeDialog) {
@@ -120,8 +122,8 @@ fun AboutAppScreen() {
         Card(
             shape = Shapes.large,
             border = BorderStroke(
-                width = 1.dp,
-                color = colorScheme.onBackground
+                width = 2.dp,
+                color = colorScheme.primaryContainer
             ),
             colors = CardColors(
                 containerColor = Color.Transparent,
@@ -134,7 +136,7 @@ fun AboutAppScreen() {
         ){
             Text(
                 text = stringResource(R.string.app_description),
-                style = typography.bodyLarge,
+                style = typography.bodyMedium,
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 16.dp)
             )
@@ -147,67 +149,68 @@ fun AboutAppScreen() {
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.source_code),
-            itemIcon = Icons.Outlined.Code,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.source_code),
+            subtitle = stringResource(R.string.source_code_license),
+            icon = Icons.Outlined.Code,
+            iconColor = iconsColor,
             shape = ListItemShape.small,
-            onPlayButtonClicked = {
+            onClick = {
                 openSourceCodeDialog = true
             },
             modifier = Modifier
                 .padding(bottom = 2.dp)
         )
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.report_bug_or_suggest_improvements),
-            itemIcon = Icons.Outlined.BugReport,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.report_bug_or_suggest_improvements),
+            icon = Icons.Outlined.BugReport,
+            iconColor = iconsColor,
             shape = ListItemShape.medium,
-            onPlayButtonClicked = {
+            onClick = {
                 openBugReportDialog = true
             },
             modifier = Modifier
                 .padding(bottom = 2.dp)
         )
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.privacy_policy),
-            itemIcon = Icons.Outlined.Policy,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.privacy_policy),
+            icon = Icons.Outlined.Policy,
+            iconColor = iconsColor,
             shape = ListItemShape.medium,
-            onPlayButtonClicked = {
+            onClick = {
                 openPrivacyPolicyDialog = true
             },
             modifier = Modifier
                 .padding(bottom = 2.dp)
         )
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.web),
-            itemIcon = Icons.Outlined.Devices,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.web),
+            icon = Icons.Outlined.Devices,
+            iconColor = iconsColor,
             shape = ListItemShape.medium,
-            onPlayButtonClicked = {
+            onClick = {
                 openWebsiteDialog = true
             },
             modifier = Modifier
                 .padding(bottom = 2.dp)
         )
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.community),
-            itemIcon = Icons.Outlined.Forum,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.community),
+            icon = Icons.Outlined.Forum,
+            iconColor = iconsColor,
             shape = ListItemShape.medium,
-            onPlayButtonClicked = {
+            onClick = {
                 openTelegramChannelDialog = true
             },
             modifier = Modifier
                 .padding(bottom = 2.dp)
         )
-        NonExpandableLevelItem(
-            levelHeading = stringResource(R.string.share_app),
-            itemIcon = Icons.Outlined.IosShare,
-            itemIconColor = colorScheme.primary,
+        NonExpandableListItem(
+            title = stringResource(R.string.share_app),
+            icon = Icons.Outlined.IosShare,
+            iconColor = iconsColor,
             shape = ListItemShape.large,
-            onPlayButtonClicked = {
+            onClick = {
                 context.startActivity(
                     Intent.createChooser(
                         inviteFriendsIntent,

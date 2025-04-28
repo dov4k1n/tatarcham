@@ -31,7 +31,7 @@ import com.dov4k1n.tatarapp.data.Lexicon250
 import com.dov4k1n.tatarapp.data.sectionDictionary
 import com.dov4k1n.tatarapp.ui.components.HeroBlock
 import com.dov4k1n.tatarapp.ui.components.IntervalTrainingBlock
-import com.dov4k1n.tatarapp.ui.components.NonExpandableLevelItem
+import com.dov4k1n.tatarapp.ui.components.NonExpandableListItem
 import com.dov4k1n.tatarapp.ui.components.TheoryBlock
 import com.dov4k1n.tatarapp.ui.theme.ListItemShape
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
@@ -70,22 +70,22 @@ fun LexiconScreen(
             )
         }
         item {
-            NonExpandableLevelItem(
-                levelHeading = stringResource(id = R.string.cards),
-                itemIcon = Icons.Outlined.Style,
-                itemIconColor = MaterialTheme.colorScheme.inversePrimary,
-                onPlayButtonClicked = { },
+            NonExpandableListItem(
+                title = stringResource(id = R.string.cards),
+                icon = Icons.Outlined.Style,
+                iconColor = MaterialTheme.colorScheme.inversePrimary,
+                onClick = { },
                 shape = ListItemShape.small,
                 modifier = Modifier.Companion
                     .padding(bottom = 2.dp)
             )
         }
         item {
-            NonExpandableLevelItem(
-                levelHeading = stringResource(id = R.string.matches),
-                itemIcon = Icons.Outlined.Dashboard,
-                itemIconColor = MaterialTheme.colorScheme.inversePrimary,
-                onPlayButtonClicked = { },
+            NonExpandableListItem(
+                title = stringResource(id = R.string.matches),
+                icon = Icons.Outlined.Dashboard,
+                iconColor = MaterialTheme.colorScheme.inversePrimary,
+                onClick = { },
                 shape = ListItemShape.large,
                 modifier = Modifier.Companion.padding(bottom = 8.dp)
             )
@@ -115,12 +115,12 @@ fun LexiconScreen(
         ) {
             when (it.id) {
                 1 -> {
-                    NonExpandableLevelItem(
-                        levelHeading = stringResource(id = it.nameAddress),
-                        levelSubheading = stringResource(id = it.moreDescription),
-                        itemIcon = it.icon,
-                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onPlayButtonClicked = { },
+                    NonExpandableListItem(
+                        title = stringResource(id = it.nameAddress),
+                        subtitle = stringResource(id = it.moreDescription),
+                        icon = it.icon,
+                        iconColor = MaterialTheme.colorScheme.inversePrimary,
+                        onClick = { },
                         shape = ListItemShape.small,
                         modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
@@ -128,24 +128,24 @@ fun LexiconScreen(
                 }
 
                 sectionDictionary.size -> {
-                    NonExpandableLevelItem(
-                        levelHeading = stringResource(id = it.nameAddress),
-                        levelSubheading = stringResource(id = it.moreDescription),
-                        itemIcon = it.icon,
-                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onPlayButtonClicked = { },
+                    NonExpandableListItem(
+                        title = stringResource(id = it.nameAddress),
+                        subtitle = stringResource(id = it.moreDescription),
+                        icon = it.icon,
+                        iconColor = MaterialTheme.colorScheme.inversePrimary,
+                        onClick = { },
                         shape = ListItemShape.large,
                         modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
-                    NonExpandableLevelItem(
-                        levelHeading = stringResource(id = it.nameAddress),
-                        levelSubheading = stringResource(id = it.moreDescription),
-                        itemIcon = it.icon,
-                        itemIconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onPlayButtonClicked = { },
+                    NonExpandableListItem(
+                        title = stringResource(id = it.nameAddress),
+                        subtitle = stringResource(id = it.moreDescription),
+                        icon = it.icon,
+                        iconColor = MaterialTheme.colorScheme.inversePrimary,
+                        onClick = { },
                         shape = ListItemShape.medium,
                         modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )

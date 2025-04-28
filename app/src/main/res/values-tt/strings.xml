@@ -18,10 +18,11 @@
 
     <string name="app_description">Татарчам - татар телен өйрәнү өчен азат һәм ачык чыганаклы мобиль кушымта.</string>
     <string name="source_code">Чыганак коды</string>
+    <string name="source_code_license">GPL 3.0 лицензиясе буенча GitHub\'та</string>
     <string name="report_bug_or_suggest_improvements">Хаталар турында хәбәр итү яки яхшырту тәкъдим итү</string>
     <string name="privacy_policy">Конфиденциаль политикасы</string>
     <string name="share_app">Бу кушымта белән бүлешү</string>
-    <string name="share_app_message">Татар телен монда өйрәнәм, бик кызык!\nhttps://t.me/tatar_app</string>
+    <string name="share_app_message">Татар телен монда өйрәнәм, бик кызык!\nhttps://dov4k1n.github.io</string>
 
     <string name="bottom_bar_phonetics">Фонетика</string>
     <string name="bottom_bar_lexicon">Лексика</string>

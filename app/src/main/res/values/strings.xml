@@ -13,13 +13,14 @@
 
     <string name="app_description">Tatarçam is a free and open source mobile app for learning the Tatar language, spoken mainly by the Tatars of Tatarstan, Russia.</string>
     <string name="source_code">Source code</string>
+    <string name="source_code_license">On GitHub under GPL 3.0 license</string>
     <string name="source_code_link" translatable="false">https://github.com/dov4k1n/tatarcham</string>
     <string name="report_bug_or_suggest_improvements">Report a bug or suggest improvements</string>
     <string name="report_bug_or_suggest_improvements_link" translatable="false">https://github.com/dov4k1n/tatarcham/issues</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_policy_link" translatable="false">https://github.com/dov4k1n/tatarcham/blob/main/PRIVACY_POLICY.md</string>
     <string name="share_app">Share this app</string>
-    <string name="share_app_message">I learn tatar language here, very interesting!\nhttps://t.me/tatar_app</string>
+    <string name="share_app_message">I learn tatar language here, very interesting!\nhttps://dov4k1n.github.io</string>
 
     <string name="donation_link" translatable="false">https://dov4k1n.github.io/donations.html</string>
     <string name="website_link" translatable="false">https://dov4k1n.github.io/</string>

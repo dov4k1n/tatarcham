@@ -19,6 +19,7 @@ import androidx.compose.material.icons.outlined.Code
 import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -47,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.SectionData
 import com.dov4k1n.tatarapp.data.SectionVerbData
+import com.dov4k1n.tatarapp.data.local.ThemeMode
 import com.dov4k1n.tatarapp.data.morphologydescriptions.SectionType
 import com.dov4k1n.tatarapp.data.sectionVerb
 import com.dov4k1n.tatarapp.ui.theme.ListItemShape
@@ -54,61 +56,67 @@ import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 
 @Preview
 @Composable
-fun PreviewNewLevelItem() {
-    TatarAppTheme(useDarkTheme = true) {
-        NewLevelItem(
-            playArrowColor = colorScheme.onSecondary,
+fun PreviewExpandableListItem() {
+    TatarAppTheme(themeMode = ThemeMode.Dark) {
+        ExpandableListItem(
+            iconColor = colorScheme.onSecondary,
             sectionData = sectionVerb[1],
             shape = ListItemShape.medium,
-            onPlayButtonClicked = {}
+            onIconClick = {}
         )
     }
 }
 
 @Preview
 @Composable
-fun PreviewNonExpandableLevelItem() {
-    TatarAppTheme(useDarkTheme = true) {
-        NonExpandableLevelItem(
-            levelHeading = "Source code",
-            itemIcon = Icons.Outlined.Code,
-            itemIconColor = colorScheme.primary,
+fun PreviewNonExpandableListItem() {
+    TatarAppTheme(themeMode = ThemeMode.Dark) {
+        NonExpandableListItem(
+            title = "Source code",
+            subtitle = "on GitHub under GPL 3.0 license",
+            icon = Icons.Outlined.Code,
+            iconColor = colorScheme.onBackground,
             shape = ListItemShape.small,
-            onPlayButtonClicked = {}
+            onClick = {}
         )
     }
 }
 
 @Composable
-fun NonExpandableLevelItem(
-    levelHeading: String,
-    itemIcon: ImageVector,
-    itemIconColor: Color,
+fun NonExpandableListItem(
+    title: String,
+    icon: ImageVector,
+    iconColor: Color,
     shape: Shape,
-    onPlayButtonClicked: () -> Unit,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    levelSubheading: String = "",
-    progressComposable: @Composable () -> Unit = {}
+    subtitle: String = "",
+    progressBar: @Composable () -> Unit = {}
 ) {
     Card(
+        colors = CardColors(
+            containerColor = colorScheme.primaryContainer,
+            contentColor = colorScheme.primary,
+            disabledContainerColor = colorScheme.background,
+            disabledContentColor = colorScheme.background
+        ),
         shape = shape,
         modifier = modifier
             .padding(horizontal = 16.dp)
-            .clickable { onPlayButtonClicked() }
+            .clickable { onClick() }
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .background(color = colorScheme.primaryContainer)
                 .padding(vertical = 8.dp)
         ) {
             IconButton(
-                onClick = { onPlayButtonClicked() }
+                onClick = { onClick() }
             ) {
                 Icon(
-                    imageVector = itemIcon,
+                    imageVector = icon,
                     contentDescription = null,
-                    tint = itemIconColor,
+                    tint = iconColor,
                     modifier = Modifier
                         .padding(horizontal = 8.dp)
                 )
@@ -119,15 +127,14 @@ fun NonExpandableLevelItem(
                     .weight(1f)
             ) {
                 Text(
-                    text = levelHeading,
+                    text = title,
                     style = typography.bodyMedium,
-                    color = Color(0xFFFFFFFF),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                 )
-                if (levelSubheading.isNotEmpty()) {
+                if (subtitle.isNotEmpty()) {
                     Text(
-                        text = levelSubheading,
+                        text = subtitle,
                         style = typography.bodySmall,
                         color = colorScheme.onBackground,
                         maxLines = 1,
@@ -135,18 +142,18 @@ fun NonExpandableLevelItem(
                     )
                 }
             }
-            progressComposable()
+            progressBar()
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NewLevelItem(
-    playArrowColor: Color,
+fun ExpandableListItem(
+    iconColor: Color,
     sectionData: SectionData,
     shape: Shape,
-    onPlayButtonClicked: () -> Unit,
+    onIconClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var expanded by remember { mutableStateOf(false) }
@@ -184,12 +191,12 @@ fun NewLevelItem(
                 ) {
                     CompositionLocalProvider(LocalUseFallbackRippleImplementation provides true) {
                         IconButton(
-                            onClick = { onPlayButtonClicked() }
+                            onClick = { onIconClick() }
                         ) {
                             Icon(
                                 imageVector = Icons.Outlined.PlayArrow,
                                 contentDescription = null,
-                                tint = playArrowColor,
+                                tint = iconColor,
                                 modifier = Modifier
                                     .padding(horizontal = 8.dp)
                             )
@@ -245,7 +252,7 @@ fun NewLevelItem(
                         }
                         CompositionLocalProvider(LocalUseFallbackRippleImplementation provides true) {
                             ElevatedButton(
-                                onClick = { onPlayButtonClicked() },
+                                onClick = { onIconClick() },
                                 colors = ButtonColors(
                                     contentColor = colorScheme.secondary,
                                     containerColor = colorScheme.primaryContainer,

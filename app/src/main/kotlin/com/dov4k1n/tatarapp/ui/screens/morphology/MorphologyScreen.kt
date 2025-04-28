@@ -18,7 +18,7 @@ import com.dov4k1n.tatarapp.data.BottomAppBarItems
 import com.dov4k1n.tatarapp.data.sectionAdjective
 import com.dov4k1n.tatarapp.data.sectionNoun
 import com.dov4k1n.tatarapp.data.sectionVerb
-import com.dov4k1n.tatarapp.ui.components.NewLevelItem
+import com.dov4k1n.tatarapp.ui.components.ExpandableListItem
 import com.dov4k1n.tatarapp.ui.components.TheoryBlock
 import com.dov4k1n.tatarapp.ui.theme.ListItemShape
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
@@ -64,10 +64,10 @@ fun MorphologyScreen(
         ) {
             when (it.id) {
                 1 -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
                         modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
@@ -75,20 +75,20 @@ fun MorphologyScreen(
                 }
 
                 sectionVerb.size -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
                         modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
                         modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
@@ -111,10 +111,10 @@ fun MorphologyScreen(
         ) {
             when (it.id) {
                 1 -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
                         modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
@@ -122,20 +122,20 @@ fun MorphologyScreen(
                 }
 
                 sectionNoun.size -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
                         modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
                         modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
@@ -157,10 +157,10 @@ fun MorphologyScreen(
         ) {
             when (it.id) {
                 1 -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.small,
                         modifier = Modifier.Companion
                             .padding(bottom = 2.dp)
@@ -168,20 +168,20 @@ fun MorphologyScreen(
                 }
 
                 sectionAdjective.size -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.large,
                         modifier = Modifier.Companion.padding(bottom = 8.dp)
                     )
                 }
 
                 else -> {
-                    NewLevelItem(
-                        playArrowColor = MaterialTheme.colorScheme.onSecondary,
+                    ExpandableListItem(
+                        iconColor = MaterialTheme.colorScheme.onSecondary,
                         sectionData = it,
-                        onPlayButtonClicked = { onPlayButtonClicked(it.nameAddress) },
+                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
                         shape = ListItemShape.medium,
                         modifier = Modifier.Companion.padding(bottom = 2.dp)
                     )
