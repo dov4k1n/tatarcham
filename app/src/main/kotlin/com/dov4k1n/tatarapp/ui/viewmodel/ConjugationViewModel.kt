@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.dov4k1n.tatarapp.data.SCORE_INCREASE
-import com.dov4k1n.tatarapp.ui.state.SessionUiState
+import com.dov4k1n.tatarapp.ui.state.ConjugationUiState
 import com.dov4k1n.tatarapp.util.personalPronouns
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -17,8 +17,8 @@ open class ConjugationViewModel(
     val findCorrectAnswer: (root: String, prefix: String) -> String
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(SessionUiState())
-    val uiState: StateFlow<SessionUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(ConjugationUiState())
+    val uiState: StateFlow<ConjugationUiState> = _uiState.asStateFlow()
 
     private lateinit var currentWord: String
 
@@ -32,7 +32,7 @@ open class ConjugationViewModel(
     private var typedWrong by mutableStateOf(false)
 
     internal fun resetGame() {
-        _uiState.value = SessionUiState(
+        _uiState.value = ConjugationUiState(
             totalWords = wordSet.size,
             currentWord = wordSet.random(),
             currentPrefix = personalPronouns.random(),
