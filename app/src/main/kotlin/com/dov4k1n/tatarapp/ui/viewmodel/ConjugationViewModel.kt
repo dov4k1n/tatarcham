@@ -29,18 +29,19 @@ open class ConjugationViewModel(
     }
     var previousUserAnswer = ""
 
-    private var typedWrong by mutableStateOf(false)
-
-    internal fun resetGame() {
-        _uiState.value = ConjugationUiState(
-            totalWords = wordSet.size,
-            currentWord = wordSet.random(),
-            currentPrefix = personalPronouns.random(),
-        )
+    private fun pickRandomWord(): String {
+        currentWord = wordSet.random()
+        return currentWord
     }
 
+    private var typedWrong by mutableStateOf(false)
+    
     init {
-        resetGame()
+        _uiState.value = ConjugationUiState(
+            totalWords = wordSet.size,
+            currentWord = pickRandomWord(),
+            currentPrefix = personalPronouns.random(),
+        )
     }
 
     private fun updateSessionState(updatedScore: Int) {
@@ -48,18 +49,13 @@ open class ConjugationViewModel(
             currentState.copy(
                 totalWords = wordSet.size,
                 isTypedAnsWrong = false,
-                currentWord = wordSet.random(),
+                currentWord = pickRandomWord(),
                 currentPrefix = personalPronouns.random(),
                 currentWordCount = currentState.currentWordCount.inc(),
                 score = updatedScore,
                 wrongAnswers = currentState.wrongAnswers
             )
         }
-    }
-
-    internal fun skipWord() {
-        updateSessionState(_uiState.value.score)
-        updateUserAnswer("")
     }
 
     internal fun checkUserAnswer() {
