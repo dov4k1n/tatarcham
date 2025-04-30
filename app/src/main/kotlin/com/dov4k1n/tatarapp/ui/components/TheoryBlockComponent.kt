@@ -8,7 +8,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
-import androidx.compose.material.icons.outlined.GraphicEq
+import androidx.compose.material.icons.outlined.Add
+import androidx.compose.material.icons.outlined.Explore
+import androidx.compose.material.icons.outlined.Fingerprint
+import androidx.compose.material.icons.outlined.Memory
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme.colorScheme
@@ -29,10 +32,10 @@ import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 fun PreviewTheoryBlock() {
     TatarAppTheme(useDarkTheme = true) {
         TheoryBlock(
-            icon = Icons.Outlined.GraphicEq,
-            heading = "Phonetics",
+            icon = Icons.Outlined.Fingerprint,
+            heading = "Lexiconnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
             headingColor = colorScheme.onError,
-            subheading = "Letters and sounds of tatar language"
+            subheading = "General information"
         )
     }
 }
@@ -41,10 +44,10 @@ fun PreviewTheoryBlock() {
 fun PreviewIntervalTrainingBlock() {
     TatarAppTheme(useDarkTheme = true) {
         IntervalTrainingBlock(
-            icon = Icons.Outlined.GraphicEq,
-            heading = "Phonetics",
+            icon = Icons.Outlined.Memory,
+            heading = "Traininggggggggggggggggggggggggggg",
             headingColor = colorScheme.onError,
-            subheading = "Letters and sounds of tatar language"
+            subheading = "Spaced repetitions"
         )
     }
 }
@@ -53,11 +56,19 @@ fun PreviewIntervalTrainingBlock() {
 fun PreviewHeroBlock() {
     TatarAppTheme(useDarkTheme = true) {
         HeroBlock(
-            icon = Icons.Outlined.GraphicEq,
-            heading = "Phonetics",
+            icon = Icons.Outlined.Explore,
+            heading = "Dictionaryyyyyyyyyyyyyyyyyyyyyyyyy",
             headingColor = colorScheme.onError,
-            subheading = "Letters and sounds of tatar language"
-        )
+            subheading = "Explore new words"
+        ) {
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(
+                    imageVector = Icons.Outlined.Add,
+                    contentDescription = null,
+                    tint = colorScheme.inversePrimary
+                )
+            }
+        }
     }
 }
 

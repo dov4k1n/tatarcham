@@ -28,6 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
 import com.dov4k1n.tatarapp.data.Lexicon250
+import com.dov4k1n.tatarapp.data.local.ThemeMode
 import com.dov4k1n.tatarapp.data.sectionDictionary
 import com.dov4k1n.tatarapp.ui.components.HeroBlock
 import com.dov4k1n.tatarapp.ui.components.IntervalTrainingBlock
@@ -39,7 +40,7 @@ import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 @Preview
 @Composable
 fun PreviewLexiconScreen() {
-    TatarAppTheme(useDarkTheme = true) {
+    TatarAppTheme(ThemeMode.Dark) {
         LexiconScreen()
     }
 }
