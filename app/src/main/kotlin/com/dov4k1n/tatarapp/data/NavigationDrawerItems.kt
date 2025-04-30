@@ -5,13 +5,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Help
 import androidx.compose.material.icons.automirrored.outlined.HelpOutline
 import androidx.compose.material.icons.filled.BarChart
-import androidx.compose.material.icons.filled.Forum
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Web
 import androidx.compose.material.icons.outlined.BarChart
-import androidx.compose.material.icons.outlined.Forum
 import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Web
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.dov4k1n.tatarapp.R
 
@@ -39,24 +35,6 @@ sealed class NavigationDrawerItems(
         title = R.string.about_app,
         selectedIcon = Icons.AutoMirrored.Filled.Help,
         unselectedIcon = Icons.AutoMirrored.Outlined.HelpOutline
-    )
-    data object Links : NavigationDrawerItems(
-        route = "links",
-        title = R.string.links,
-        selectedIcon = Icons.Filled.Forum,
-        unselectedIcon = Icons.Outlined.Forum
-    )
-    data object Web : NavigationDrawerItems(
-        route = "web",
-        title = R.string.web,
-        selectedIcon = Icons.Filled.Web,
-        unselectedIcon = Icons.Outlined.Web
-    )
-    data object Community : NavigationDrawerItems(
-        route = "community",
-        title = R.string.community,
-        selectedIcon = Icons.Filled.Forum,
-        unselectedIcon = Icons.Outlined.Forum
     )
 }
 
