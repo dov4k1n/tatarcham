@@ -72,4 +72,6 @@ dependencies {
 
     implementation(libs.compose.markdown)
 
+    implementation(libs.androidx.lifecycle.process)
+
 }

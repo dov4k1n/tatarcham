@@ -9,17 +9,17 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.dov4k1n.tatarapp.R
@@ -28,9 +28,8 @@ import com.dov4k1n.tatarapp.ui.components.ConjugationCard
 import com.dov4k1n.tatarapp.ui.components.ProgressBarTimeAndStatistics
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 import com.dov4k1n.tatarapp.ui.viewmodel.ConjugationViewModel
+import com.dov4k1n.tatarapp.ui.viewmodel.StopwatchViewModel
 import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PresentViewModel
-import kotlinx.coroutines.delay
-import kotlin.time.Duration.Companion.seconds
 
 @Preview
 @Composable
@@ -57,6 +56,7 @@ fun ConjugationScreen(
     theory: Int = R.string.empty_string,
     newTheory: @Composable () -> Unit = {},
     viewModel: ConjugationViewModel = viewModel(),
+    stopwatch: StopwatchViewModel = viewModel(),
     skipPrefix: Boolean = false
 ) {
     val sessionUiState by viewModel.uiState.collectAsState()
@@ -75,13 +75,31 @@ fun ConjugationScreen(
         label = ""
     )
 
-    var ticks by remember { mutableIntStateOf(0) }
-    LaunchedEffect(Unit) {
+//    var ticks by remember { mutableIntStateOf(0) }
+//    LaunchedEffect(Unit) {
 //        var state by remember { mutableStateOf(Lifecycle.Event.) }
 //        https://betterprogramming.pub/jetpack-compose-with-lifecycle-aware-composables-7bd5d6793e0
-        while(true) {
-            delay(1.seconds)
-            ticks++
+//        while(true) {
+//            delay(1.seconds)
+//            ticks++
+//        }
+//    }
+
+    val ticks by stopwatch.ticks.collectAsState()
+    val context = LocalContext.current
+    DisposableEffect(Unit) {
+        val lifecycleOwner = ProcessLifecycleOwner.get()
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_START -> stopwatch.toggleTimer(true)
+                Lifecycle.Event.ON_STOP -> stopwatch.toggleTimer(false)
+                else -> {}
+            }
+        }
+
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose {
+            lifecycleOwner.lifecycle.removeObserver(observer)
         }
     }
 
@@ -90,8 +108,6 @@ fun ConjugationScreen(
         score,
         percentage
     )
-
-    val context = LocalContext.current
 
     Column(
         verticalArrangement = Arrangement.SpaceBetween,

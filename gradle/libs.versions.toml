@@ -10,6 +10,7 @@ composeBom = "2024.09.02"
 lifecycleRuntimeKtxVersion = "2.8.6"
 navigationRuntimeKtx = "2.8.1"
 composeMarkdown = "0.5.7"
+lifecycleProcess = "2.6.2"
 
 [libraries]
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
@@ -30,6 +31,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 compose-markdown = { group = "com.github.jeziellago", name ="compose-markdown", version.ref = "composeMarkdown"}
+androidx-lifecycle-process = { group ="androidx.lifecycle", name ="lifecycle-process", version.ref = "lifecycleProcess" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
