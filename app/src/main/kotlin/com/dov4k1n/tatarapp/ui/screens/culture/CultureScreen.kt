@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
-import com.dov4k1n.tatarapp.data.BottomAppBarItems
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.ui.components.TheoryBlock
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 
@@ -50,7 +50,7 @@ fun CultureScreen() {
             }
             item {
                 TheoryBlock(
-                    icon = BottomAppBarItems.Culture.selectedIcon,
+                    icon = BottomAppBarItem.Culture.selectedIcon,
                     heading = stringResource(R.string.bottom_bar_culture),
                     headingColor = MaterialTheme.colorScheme.onErrorContainer,
                     subheading = stringResource(id = R.string.culture_subheading),

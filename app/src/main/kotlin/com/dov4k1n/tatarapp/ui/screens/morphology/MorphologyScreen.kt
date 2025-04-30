@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
-import com.dov4k1n.tatarapp.data.BottomAppBarItems
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.sectionAdjective
 import com.dov4k1n.tatarapp.data.sectionNoun
 import com.dov4k1n.tatarapp.data.sectionVerb
@@ -40,7 +40,7 @@ fun MorphologyScreen(
     LazyColumn {
         item {
             TheoryBlock(
-                icon = BottomAppBarItems.Morphology.selectedIcon,
+                icon = BottomAppBarItem.Morphology.selectedIcon,
                 heading = stringResource(R.string.bottom_bar_morphology),
                 headingColor = MaterialTheme.colorScheme.onSecondary,
                 subheading = stringResource(id = R.string.introduction_subheading),

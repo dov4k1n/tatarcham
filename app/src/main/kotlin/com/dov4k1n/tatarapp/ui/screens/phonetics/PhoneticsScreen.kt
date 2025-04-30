@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
-import com.dov4k1n.tatarapp.data.BottomAppBarItems
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.sectionHarmonies
 import com.dov4k1n.tatarapp.ui.components.ExpandableListItem
 import com.dov4k1n.tatarapp.ui.components.TheoryBlock
@@ -39,7 +39,7 @@ fun PhoneticsScreen(
         LazyColumn {
             item {
                 TheoryBlock(
-                    icon = BottomAppBarItems.Phonetics.selectedIcon,
+                    icon = BottomAppBarItem.Phonetics.selectedIcon,
                     heading = stringResource(R.string.bottom_bar_phonetics),
                     headingColor = MaterialTheme.colorScheme.onError,
                     subheading = stringResource(id = R.string.phonetics_subheading),

@@ -13,17 +13,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.dov4k1n.tatarapp.R
-import com.dov4k1n.tatarapp.data.BottomAppBarItems
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.MorphologyScreen
 import com.dov4k1n.tatarapp.data.NavigationDrawerItems
 import com.dov4k1n.tatarapp.ui.screens.AboutAppScreen
+import com.dov4k1n.tatarapp.ui.screens.UnderDevelopmentScreen
 import com.dov4k1n.tatarapp.ui.screens.culture.CultureScreen
 import com.dov4k1n.tatarapp.ui.screens.lexicon.LexiconScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.MorphologyScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.NounPluralScreen
-import com.dov4k1n.tatarapp.ui.screens.phonetics.PhoneticsScreen
-import com.dov4k1n.tatarapp.ui.screens.UnderDevelopmentScreen
-import com.dov4k1n.tatarapp.ui.screens.syntax.SyntaxScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbDefiniteFutureScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbDefinitePastScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbFutureInThePastScreen
@@ -34,15 +32,18 @@ import com.dov4k1n.tatarapp.ui.screens.morphology.VerbInfinitiveScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastContinuousScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastPerfectScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPresentScreen
+import com.dov4k1n.tatarapp.ui.screens.phonetics.PhoneticsScreen
+import com.dov4k1n.tatarapp.ui.screens.syntax.SyntaxScreen
 
 @Composable
-fun TabsNavGraph(
+fun NavGraph(
     navController: NavHostController,
-    innerPadding: PaddingValues
+    innerPadding: PaddingValues,
+    lastTabOpen: BottomAppBarItem
 ) {
     NavHost(
         navController = navController,
-        startDestination = BottomAppBarItems.Phonetics.route,
+        startDestination = lastTabOpen.route,
         enterTransition = {
             scaleIn(initialScale = 0.9f) + fadeIn()
         },
@@ -51,13 +52,13 @@ fun TabsNavGraph(
         },
         modifier = Modifier.padding(innerPadding)
     ) {
-        composable(route = BottomAppBarItems.Phonetics.route) {
+        composable(route = BottomAppBarItem.Phonetics.route) {
             PhoneticsScreen()
         }
-        composable(route = BottomAppBarItems.Lexicon.route) {
+        composable(route = BottomAppBarItem.Lexicon.route) {
             LexiconScreen()
         }
-        composable(route = BottomAppBarItems.Morphology.route) {
+        composable(route = BottomAppBarItem.Morphology.route) {
             val screenMap = hashMapOf(
                 R.string.verb_present to MorphologyScreen.Present,
                 R.string.verb_definite_past to MorphologyScreen.DefinitePast,
@@ -98,14 +99,13 @@ fun TabsNavGraph(
                     MorphologyScreen.Gerund -> VerbGerundScreen()
                     MorphologyScreen.FutureInThePast -> VerbFutureInThePastScreen()
                     MorphologyScreen.Plural -> NounPluralScreen()
-                    else -> { }
                 }
             }
         }
-        composable(route = BottomAppBarItems.Syntax.route) {
+        composable(route = BottomAppBarItem.Syntax.route) {
             SyntaxScreen()
         }
-        composable(route = BottomAppBarItems.Culture.route) {
+        composable(route = BottomAppBarItem.Culture.route) {
             CultureScreen()
         }
         composable(route = NavigationDrawerItems.Statistics.route) {

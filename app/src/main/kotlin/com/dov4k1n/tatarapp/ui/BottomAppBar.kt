@@ -17,8 +17,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.dov4k1n.tatarapp.MainComposable
-import com.dov4k1n.tatarapp.data.BottomAppBarItems
-import com.dov4k1n.tatarapp.data.MorphologyScreen
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.bottomAppBarTabsList
 
 @Preview
@@ -29,21 +28,22 @@ fun PreviewBottomAppBar() {
 
 @Composable
 fun BottomAppBar(
-    navController: NavHostController
+    navController: NavHostController,
+    updateLastTabOpen: (BottomAppBarItem) -> Unit
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
     val showBottomAppBar: Boolean = bottomAppBarTabsList.any {
-        it.route == currentDestination?.route || currentDestination?.route == MorphologyScreen.Morphology.name
+        it.route == currentDestination?.route
     }
 
     val selectedIconColor: Color = when(currentDestination?.route) {
-        BottomAppBarItems.Phonetics.route -> colorScheme.onError
-        BottomAppBarItems.Lexicon.route -> colorScheme.inversePrimary
-        BottomAppBarItems.Morphology.route -> colorScheme.onSecondary
-        BottomAppBarItems.Syntax.route -> colorScheme.errorContainer
-        BottomAppBarItems.Culture.route -> colorScheme.onErrorContainer
+        BottomAppBarItem.Phonetics.route -> colorScheme.onError
+        BottomAppBarItem.Lexicon.route -> colorScheme.inversePrimary
+        BottomAppBarItem.Morphology.route -> colorScheme.onSecondary
+        BottomAppBarItem.Syntax.route -> colorScheme.errorContainer
+        BottomAppBarItem.Culture.route -> colorScheme.onErrorContainer
         else -> colorScheme.onSecondary
     }
 
@@ -81,6 +81,8 @@ fun BottomAppBar(
                     },
                     selected = selectedTab,
                     onClick = {
+                        updateLastTabOpen(tab)
+
                         navController.navigate(tab.route) {
                             popUpTo(navController.graph.findStartDestination().id) {
                                 saveState = true

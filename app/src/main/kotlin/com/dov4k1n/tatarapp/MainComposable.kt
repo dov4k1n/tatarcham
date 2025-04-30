@@ -15,18 +15,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.bottomAppBarTabsList
 import com.dov4k1n.tatarapp.data.local.next
-import com.dov4k1n.tatarapp.navigation.TabsNavGraph
+import com.dov4k1n.tatarapp.navigation.NavGraph
 import com.dov4k1n.tatarapp.ui.BottomAppBar
 import com.dov4k1n.tatarapp.ui.DrawerContent
 import com.dov4k1n.tatarapp.ui.TopAppBar
 import com.dov4k1n.tatarapp.ui.components.LanguageChooserDialog
-import com.dov4k1n.tatarapp.ui.components.OpenLinkDialog
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 import kotlinx.coroutines.launch
 
@@ -43,6 +42,12 @@ fun MainComposable(
         val nextTheme = themeMode.next()
         themeMode = nextTheme
         preferencesManager.saveThemeMode(nextTheme)
+    }
+    var lastTabOpen by remember {
+        mutableStateOf(preferencesManager.getLastTabOpen())
+    }
+    val updateLastTabOpen: (BottomAppBarItem) -> Unit = {
+        preferencesManager.saveLastTabOpen(it)
     }
 
     TatarAppTheme(themeMode) {
@@ -91,11 +96,16 @@ fun MainComposable(
                     },
                     bottomBar = {
                         BottomAppBar(
-                            navController = navController
+                            navController = navController,
+                            updateLastTabOpen = updateLastTabOpen
                         )
                     },
                     content = {
-                        TabsNavGraph(navController, it)
+                        NavGraph(
+                            navController,
+                            it,
+                            lastTabOpen
+                        )
                     }
                 )
             }
