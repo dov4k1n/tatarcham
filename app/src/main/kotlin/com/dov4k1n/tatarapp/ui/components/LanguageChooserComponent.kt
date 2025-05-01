@@ -23,6 +23,7 @@ import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -37,17 +38,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.os.LocaleListCompat
 import com.dov4k1n.tatarapp.R
+import com.dov4k1n.tatarapp.data.local.ThemeMode
 import com.dov4k1n.tatarapp.ui.theme.TatarAppTheme
 import kotlinx.coroutines.launch
 
 @Preview
 @Composable
 fun PreviewLanguageChooser() {
-    TatarAppTheme(useDarkTheme = true) {
-        LanguageChooserDialog {
-
-        }
+    TatarAppTheme(ThemeMode.Dark) {
+        LanguageChooserDialog {}
     }
+}
+
+private fun changeLocale(
+    old: MutableState<String>,
+    new: String
+) {
+    AppCompatDelegate.setApplicationLocales(
+        LocaleListCompat.forLanguageTags(new)
+    )
+    old.value = new
 }
 
 @Composable
@@ -56,6 +66,27 @@ fun LanguageChooserDialog(
 ) {
     val scope = rememberCoroutineScope()
 
+    val tatar = stringResource(R.string.tatar)
+    val russian = stringResource(R.string.russian)
+    val english = stringResource(R.string.english)
+
+    val localeOptions = mapOf(
+        tatar to "tt",
+        russian to "ru",
+        english to "en"
+    )
+
+    val context = LocalContext.current
+
+    val defaultLocale = context
+        .resources
+        .configuration
+        .locales
+        .get(0)
+        .language
+
+    val currentLocale = remember { mutableStateOf(defaultLocale) }
+
     Dialog(
         onDismissRequest = onDismiss
     ) {
@@ -63,15 +94,6 @@ fun LanguageChooserDialog(
             color = colorScheme.primaryContainer,
             shape = shapes.medium,
         ) {
-            val localeOptions = mapOf(
-                R.string.tatar to "tt",
-                R.string.russian to "ru",
-                R.string.english to "en"
-            ).mapKeys { stringResource(it.key) }
-
-            val defaultLocale = LocalContext.current.resources.configuration.locales.get(0).language
-            val selectedLocale = remember { mutableStateOf(defaultLocale) }
-
             Column(
                 modifier = Modifier.padding(8.dp),
                 verticalArrangement = Arrangement.Center
@@ -99,7 +121,7 @@ fun LanguageChooserDialog(
                     Modifier.selectableGroup()
                 ) {
                     localeOptions.forEach { (selectionLocale, localeTag) ->
-                        val isSelected = selectedLocale.value == localeTag
+                        val isSelected = currentLocale.value == localeTag
                         Row(
                             Modifier
                                 .fillMaxWidth()
@@ -109,8 +131,10 @@ fun LanguageChooserDialog(
                                     onClick = {
                                         onDismiss()
                                         scope.launch {
-                                            AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(localeTag))
-                                            selectedLocale.value = localeTag
+                                            changeLocale(
+                                                old = currentLocale,
+                                                new = localeTag
+                                            )
                                         }
                                     },
                                     role = Role.RadioButton
@@ -122,16 +146,22 @@ fun LanguageChooserDialog(
                                 selected = isSelected,
                                 onClick = null,
                                 colors = RadioButtonColors(
-                                    selectedColor = colorScheme.primary,
-                                    unselectedColor = colorScheme.onSurfaceVariant,
-                                    disabledSelectedColor = colorScheme.background,
-                                    disabledUnselectedColor = colorScheme.background
+                                    selectedColor =
+                                        colorScheme.primary,
+                                    unselectedColor =
+                                        colorScheme.onSurfaceVariant,
+                                    disabledSelectedColor =
+                                        colorScheme.background,
+                                    disabledUnselectedColor =
+                                        colorScheme.background
                                 )
                             )
                             when (localeTag) {
                                 "tt" -> {
                                     Image(
-                                        painter = painterResource(id = R.drawable.tatarstan),
+                                        painter = painterResource(
+                                            id = R.drawable.tatarstan
+                                        ),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .padding(start = 8.dp)
@@ -140,7 +170,9 @@ fun LanguageChooserDialog(
                                 }
                                 "ru" -> {
                                     Image(
-                                        painter = painterResource(id = R.drawable.russia),
+                                        painter = painterResource(
+                                            id = R.drawable.russia
+                                        ),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .padding(start = 8.dp)
@@ -149,7 +181,9 @@ fun LanguageChooserDialog(
                                 }
                                 "en" -> {
                                     Image(
-                                        painter = painterResource(id = R.drawable.united_states),
+                                        painter = painterResource(
+                                            id = R.drawable.united_states
+                                        ),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .padding(start = 8.dp)
@@ -160,7 +194,10 @@ fun LanguageChooserDialog(
                             Text(
                                 text = selectionLocale,
                                 style = typography.bodyLarge,
-                                color = if (isSelected) colorScheme.primary else colorScheme.onBackground,
+                                color = if (isSelected)
+                                            colorScheme.primary
+                                        else
+                                            colorScheme.onBackground,
                                 modifier = Modifier.padding(start = 8.dp)
                             )
                         }
