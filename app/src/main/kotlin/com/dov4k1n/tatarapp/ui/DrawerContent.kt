@@ -6,13 +6,16 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Android
 import androidx.compose.material.icons.outlined.DarkMode
+import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.LightMode
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
@@ -54,6 +57,7 @@ fun PreviewDrawerContent() {
     TatarAppTheme(themeMode = ThemeMode.Dark) {
         DrawerContent(
             themeMode = ThemeMode.System,
+            onLanguageIconClick = {},
             onThemeIconClick = {},
             scope = rememberCoroutineScope(),
             drawerState = rememberDrawerState(DrawerValue.Open),
@@ -65,6 +69,7 @@ fun PreviewDrawerContent() {
 @Composable
 fun DrawerContent(
     themeMode: ThemeMode,
+    onLanguageIconClick: () -> Unit,
     onThemeIconClick: () -> Unit,
     scope: CoroutineScope,
     drawerState: DrawerState,
@@ -89,35 +94,17 @@ fun DrawerContent(
 
             Spacer(modifier = Modifier.weight(3f))
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
+            Text(
+                text = stringResource(id = R.string.app_name),
+                style = typography.displaySmall,
+                color = colorScheme.primary,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
-            ) {
-                Text(
-                    text = stringResource(id = R.string.app_name),
-                    style = typography.displaySmall,
-                    color = colorScheme.primary,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Spacer(modifier = Modifier.weight(3f))
-                IconButton(
-                    onClick = onThemeIconClick,
-                ) {
-                    Icon(
-                        imageVector = when (themeMode) {
-                            ThemeMode.Light -> Icons.Outlined.LightMode
-                            ThemeMode.Dark -> Icons.Outlined.DarkMode
-                            ThemeMode.System -> Icons.Outlined.Android
-                        },
-                        contentDescription = null,
-                        tint = colorScheme.onSurfaceVariant
-                    )
-                }
-            }
+            )
 
-            Spacer(modifier = Modifier.weight(2f))
+            Spacer(modifier = Modifier.weight(0.5f))
 
             navigationDrawerItemsList.forEach { item ->
                 val selectedItem = currentDestination?.route == item.route
@@ -128,14 +115,18 @@ fun DrawerContent(
                         selectedContainerColor = colorScheme.primaryContainer,
                         unselectedIconColor = colorScheme.onSurfaceVariant,
                         selectedIconColor = colorScheme.onSurfaceVariant,
-                        unselectedTextColor = colorScheme.primary,
-                        selectedTextColor = colorScheme.primary,
+                        unselectedTextColor = colorScheme.outlineVariant,
+                        selectedTextColor = colorScheme.outlineVariant,
                     ),
                     icon = {
                         Icon(
-                            imageVector = if (selectedItem) item.selectedIcon else item.unselectedIcon,
+                            imageVector =
+                                if (selectedItem)
+                                    item.selectedIcon
+                                else
+                                    item.unselectedIcon,
                             contentDescription = stringResource(item.title),
-                            modifier = Modifier.padding(end = 8.dp)
+                            modifier = Modifier.padding(end = 0.dp)
                         )
                     },
                     label = {
@@ -152,7 +143,9 @@ fun DrawerContent(
                             drawerState.close()
                         }
                         navController.navigate(item.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
+                            popUpTo(
+                                navController.graph.findStartDestination().id
+                            ) {
                                 saveState = true
                             }
                             launchSingleTop = true
@@ -163,7 +156,39 @@ fun DrawerContent(
                 )
             }
 
-            Spacer(modifier = Modifier.weight(2f))
+            Spacer(modifier = Modifier.weight(0.5f))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                IconButton(
+                    onClick = onLanguageIconClick
+                ) {
+                    Icon(
+                        imageVector = Icons.Outlined.Language,
+                        contentDescription = null,
+                        tint = colorScheme.outlineVariant,
+                        modifier = Modifier
+                            .size(32.dp)
+                    )
+                }
+                IconButton(
+                    onClick = onThemeIconClick,
+                ) {
+                    Icon(
+                        imageVector = when (themeMode) {
+                            ThemeMode.Light -> Icons.Outlined.LightMode
+                            ThemeMode.Dark -> Icons.Outlined.DarkMode
+                            ThemeMode.System -> Icons.Outlined.Android
+                        },
+                        contentDescription = null,
+                        tint = colorScheme.outlineVariant,
+                        modifier = Modifier
+                            .size(32.dp)
+                    )
+                }
+            }
 
             SupportDevelopersButton(
                 modifier = Modifier

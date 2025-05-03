@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.Menu
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -41,9 +40,7 @@ fun PreviewTopAppBar() {
 @Composable
 fun TopAppBar(
     navController: NavHostController,
-    modifier: Modifier = Modifier,
     onNavigationDrawerIconClick: () -> Unit = {},
-    onLanguageIconClick: () -> Unit = {}
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -86,16 +83,6 @@ fun TopAppBar(
                         contentDescription = null,
                     )
                 }
-            }
-        },
-        actions = {
-            IconButton(
-                onClick = onLanguageIconClick
-            ) {
-                Icon(
-                    imageVector = Icons.Outlined.Language,
-                    contentDescription = null,
-                )
             }
         },
         colors = TopAppBarColors(

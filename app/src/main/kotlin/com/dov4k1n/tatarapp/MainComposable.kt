@@ -34,7 +34,9 @@ fun MainComposable(
     navController: NavHostController = rememberNavController()
 ) {
     val context = LocalContext.current
-    val preferencesManager = (context.applicationContext as TatarApplication).preferencesManager
+    val preferencesManager =
+        (context.applicationContext as TatarApplication).preferencesManager
+
     var themeMode by remember {
         mutableStateOf(preferencesManager.getThemeMode())
     }
@@ -43,6 +45,7 @@ fun MainComposable(
         themeMode = nextTheme
         preferencesManager.saveThemeMode(nextTheme)
     }
+
     var lastTabOpen by remember {
         mutableStateOf(preferencesManager.getLastTabOpen())
     }
@@ -75,6 +78,7 @@ fun MainComposable(
                 drawerContent = {
                     DrawerContent(
                         themeMode = themeMode,
+                        onLanguageIconClick = { choseLanguage = true },
                         onThemeIconClick = { updateThemeMode() },
                         scope = scope,
                         drawerState = drawerState,
@@ -90,8 +94,7 @@ fun MainComposable(
                             navController = navController,
                             onNavigationDrawerIconClick = {
                                 scope.launch { drawerState.open() }
-                            },
-                            onLanguageIconClick = { choseLanguage = true }
+                            }
                         )
                     },
                     bottomBar = {
