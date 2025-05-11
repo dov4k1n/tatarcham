@@ -62,37 +62,25 @@ fun PhoneticsScreen(
                 items = sectionHarmonies,
                 key = { it.nameAddress }
             ) {
-                when (it.id) {
-                    1 -> {
-                        ExpandableListItem(
-                            iconColor = MaterialTheme.colorScheme.onError,
-                            sectionData = it,
-                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                            shape = ListItemShape.small,
-                            modifier = Modifier.Companion
-                                .padding(bottom = 2.dp)
-                        )
-                    }
-
-                    sectionHarmonies.size -> {
-                        ExpandableListItem(
-                            iconColor = MaterialTheme.colorScheme.onError,
-                            sectionData = it,
-                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                            shape = ListItemShape.large
-                        )
-                    }
-
-                    else -> {
-                        ExpandableListItem(
-                            iconColor = MaterialTheme.colorScheme.onError,
-                            sectionData = it,
-                            onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                            shape = ListItemShape.medium,
-                            modifier = Modifier.Companion.padding(bottom = 2.dp)
-                        )
-                    }
+                val shape = when (it.id) {
+                    1 -> ListItemShape.small
+                    sectionHarmonies.size -> ListItemShape.large
+                    else -> ListItemShape.medium
                 }
+
+                val padding = when (it.id) {
+                    sectionHarmonies.size -> 8.dp
+                    else -> 2.dp
+                }
+
+                ExpandableListItem(
+                    iconColor = MaterialTheme.colorScheme.onSecondary,
+                    sectionData = it,
+                    onIconClick = { onPlayButtonClicked(it.nameAddress) },
+                    shape = shape,
+                    modifier = Modifier.Companion
+                        .padding(bottom = padding)
+                )
             }
         }
         Spacer(modifier = Modifier.Companion.weight(1f))

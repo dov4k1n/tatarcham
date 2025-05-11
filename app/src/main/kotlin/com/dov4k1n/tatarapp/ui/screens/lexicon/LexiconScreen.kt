@@ -1,10 +1,6 @@
 package com.dov4k1n.tatarapp.ui.screens.lexicon
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -18,16 +14,12 @@ import androidx.compose.material.icons.outlined.Style
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dov4k1n.tatarapp.R
-import com.dov4k1n.tatarapp.data.Lexicon250
 import com.dov4k1n.tatarapp.data.local.ThemeMode
 import com.dov4k1n.tatarapp.data.sectionDictionary
 import com.dov4k1n.tatarapp.ui.components.HeroBlock
@@ -46,9 +38,7 @@ fun PreviewLexiconScreen() {
 }
 
 @Composable
-fun LexiconScreen(
-    modifier: Modifier = Modifier.Companion
-) {
+fun LexiconScreen() {
     LazyColumn {
         item {
             TheoryBlock(
@@ -114,96 +104,27 @@ fun LexiconScreen(
             items = sectionDictionary,
             key = { it.nameAddress }
         ) {
-            when (it.id) {
-                1 -> {
-                    NonExpandableListItem(
-                        title = stringResource(id = it.nameAddress),
-                        subtitle = stringResource(id = it.moreDescription),
-                        icon = it.icon,
-                        iconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onClick = { },
-                        shape = ListItemShape.small,
-                        modifier = Modifier.Companion
-                            .padding(bottom = 2.dp)
-                    )
-                }
-
-                sectionDictionary.size -> {
-                    NonExpandableListItem(
-                        title = stringResource(id = it.nameAddress),
-                        subtitle = stringResource(id = it.moreDescription),
-                        icon = it.icon,
-                        iconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onClick = { },
-                        shape = ListItemShape.large,
-                        modifier = Modifier.Companion.padding(bottom = 8.dp)
-                    )
-                }
-
-                else -> {
-                    NonExpandableListItem(
-                        title = stringResource(id = it.nameAddress),
-                        subtitle = stringResource(id = it.moreDescription),
-                        icon = it.icon,
-                        iconColor = MaterialTheme.colorScheme.inversePrimary,
-                        onClick = { },
-                        shape = ListItemShape.medium,
-                        modifier = Modifier.Companion.padding(bottom = 2.dp)
-                    )
-                }
+            val shape = when (it.id) {
+                1 -> ListItemShape.small
+                sectionDictionary.size -> ListItemShape.large
+                else -> ListItemShape.medium
             }
-        }
-    }
-}
 
-@Composable
-fun OldLexiconScreen(
+            val padding = when (it.id) {
+                sectionDictionary.size -> 8.dp
+                else -> 2.dp
+            }
 
-) {
-    LazyColumn(
-        modifier = Modifier.Companion.padding(vertical = 4.dp)
-    ) {
-        items(1) {
-            Text(
-                text = "Lexicon250",
-                fontWeight = FontWeight.Companion.Bold,
-                textAlign = TextAlign.Companion.Center
+            NonExpandableListItem(
+                title = stringResource(id = it.nameAddress),
+                subtitle = stringResource(id = it.moreDescription),
+                icon = it.icon,
+                iconColor = MaterialTheme.colorScheme.inversePrimary,
+                onClick = { },
+                shape = shape,
+                modifier = Modifier.Companion
+                    .padding(bottom = padding)
             )
-        }
-        items(
-            items = Lexicon250,
-            key = {
-                it.id
-            }
-        ) {
-            Row(
-                modifier = Modifier.Companion.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                // Left Half
-                Box(
-                    modifier = Modifier.Companion
-                        .weight(1f)
-                        .padding(end = 4.dp)
-                ) {
-                    Text(
-                        text = it.word,
-                        textAlign = TextAlign.Companion.Start
-                    )
-                }
-
-                // Right Half
-                Box(
-                    modifier = Modifier.Companion
-                        .weight(1f)
-                        .padding(start = 4.dp)
-                ) {
-                    Text(
-                        text = it.ruTranslation,
-                        textAlign = TextAlign.Companion.Start
-                    )
-                }
-            }
         }
     }
 }

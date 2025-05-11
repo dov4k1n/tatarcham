@@ -62,38 +62,25 @@ fun MorphologyScreen(
             items = sectionVerb,
             key = { it.nameAddress }
         ) {
-            when (it.id) {
-                1 -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.small,
-                        modifier = Modifier.Companion
-                            .padding(bottom = 2.dp)
-                    )
-                }
-
-                sectionVerb.size -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.large,
-                        modifier = Modifier.Companion.padding(bottom = 8.dp)
-                    )
-                }
-
-                else -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.medium,
-                        modifier = Modifier.Companion.padding(bottom = 2.dp)
-                    )
-                }
+            val shape = when (it.id) {
+                1 -> ListItemShape.small
+                sectionVerb.size -> ListItemShape.large
+                else -> ListItemShape.medium
             }
+
+            val padding = when (it.id) {
+                sectionVerb.size -> 8.dp
+                else -> 2.dp
+            }
+
+            ExpandableListItem(
+                iconColor = MaterialTheme.colorScheme.onSecondary,
+                sectionData = it,
+                onIconClick = { onPlayButtonClicked(it.nameAddress) },
+                shape = shape,
+                modifier = Modifier.Companion
+                    .padding(bottom = padding)
+            )
         }
 
 
@@ -109,38 +96,25 @@ fun MorphologyScreen(
             items = sectionNoun,
             key = { it.nameAddress }
         ) {
-            when (it.id) {
-                1 -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.small,
-                        modifier = Modifier.Companion
-                            .padding(bottom = 2.dp)
-                    )
-                }
-
-                sectionNoun.size -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.large,
-                        modifier = Modifier.Companion.padding(bottom = 8.dp)
-                    )
-                }
-
-                else -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.medium,
-                        modifier = Modifier.Companion.padding(bottom = 2.dp)
-                    )
-                }
+            val shape = when (it.id) {
+                1 -> ListItemShape.small
+                sectionNoun.size -> ListItemShape.large
+                else -> ListItemShape.medium
             }
+
+            val padding = when (it.id) {
+                sectionNoun.size -> 8.dp
+                else -> 2.dp
+            }
+
+            ExpandableListItem(
+                iconColor = MaterialTheme.colorScheme.onSecondary,
+                sectionData = it,
+                onIconClick = { onPlayButtonClicked(it.nameAddress) },
+                shape = shape,
+                modifier = Modifier.Companion
+                    .padding(bottom = padding)
+            )
         }
 
         item {
@@ -155,38 +129,25 @@ fun MorphologyScreen(
             items = sectionAdjective,
             key = { it.nameAddress }
         ) {
-            when (it.id) {
-                1 -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.small,
-                        modifier = Modifier.Companion
-                            .padding(bottom = 2.dp)
-                    )
-                }
-
-                sectionAdjective.size -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.large,
-                        modifier = Modifier.Companion.padding(bottom = 8.dp)
-                    )
-                }
-
-                else -> {
-                    ExpandableListItem(
-                        iconColor = MaterialTheme.colorScheme.onSecondary,
-                        sectionData = it,
-                        onIconClick = { onPlayButtonClicked(it.nameAddress) },
-                        shape = ListItemShape.medium,
-                        modifier = Modifier.Companion.padding(bottom = 2.dp)
-                    )
-                }
+            val shape = when (it.id) {
+                1 -> ListItemShape.small
+                sectionAdjective.size -> ListItemShape.large
+                else -> ListItemShape.medium
             }
+
+            val padding = when (it.id) {
+                sectionAdjective.size -> 8.dp
+                else -> 2.dp
+            }
+
+            ExpandableListItem(
+                iconColor = MaterialTheme.colorScheme.onSecondary,
+                sectionData = it,
+                onIconClick = { onPlayButtonClicked(it.nameAddress) },
+                shape = shape,
+                modifier = Modifier.Companion
+                    .padding(bottom = padding)
+            )
         }
     }
 }
