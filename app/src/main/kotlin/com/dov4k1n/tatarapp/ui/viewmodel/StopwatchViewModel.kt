@@ -2,10 +2,14 @@ package com.dov4k1n.tatarapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
-class StopwatchViewModel : ViewModel() {
+class StopwatchViewModel() : ViewModel() {
     private val _ticks = MutableStateFlow(0)
     val ticks: StateFlow<Int> = _ticks.asStateFlow()
 

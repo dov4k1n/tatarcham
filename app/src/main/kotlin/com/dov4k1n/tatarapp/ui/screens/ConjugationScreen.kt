@@ -23,6 +23,13 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.dov4k1n.tatarapp.R
+import com.dov4k1n.tatarapp.data.local.StatsManager
+import com.dov4k1n.tatarapp.data.local.addressToAnsCorrect
+import com.dov4k1n.tatarapp.data.local.addressToAnsWrong
+import com.dov4k1n.tatarapp.data.local.addressToCatAnsCorrect
+import com.dov4k1n.tatarapp.data.local.addressToCatAnsWrong
+import com.dov4k1n.tatarapp.data.local.addressToCatTicks
+import com.dov4k1n.tatarapp.data.local.addressToTicks
 import com.dov4k1n.tatarapp.ui.TopAppBar
 import com.dov4k1n.tatarapp.ui.components.ConjugationCard
 import com.dov4k1n.tatarapp.ui.components.ProgressBarTimeAndStatistics
@@ -39,7 +46,7 @@ fun PreviewConjugationScreen() {
             navController = NavHostController(LocalContext.current)
         )
         ConjugationScreen(
-            levelName = "Present tense",
+            levelNameResId = R.string.verb_present,
             taskMessage = "Put the verb into the present tense",
             theory = R.string.verb_present_theory,
             viewModel = PresentViewModel(),
@@ -52,7 +59,7 @@ fun PreviewConjugationScreen() {
 fun ConjugationScreen(
     taskMessage: String,
     modifier: Modifier = Modifier,
-    levelName: String = "",
+    levelNameResId: Int,
     theory: Int = R.string.empty_string,
     newTheory: @Composable () -> Unit = {},
     viewModel: ConjugationViewModel = viewModel(),
@@ -71,22 +78,18 @@ fun ConjugationScreen(
         else 0
 
     val progress: Float by animateFloatAsState(
-        targetValue = if (score + wrongAnswers != 0) score.toFloat() / (score + wrongAnswers) else 0.0F,
+        targetValue =
+            if (score + wrongAnswers != 0)
+                score.toFloat() / (score + wrongAnswers)
+            else
+                0.0F,
         label = ""
     )
 
-//    var ticks by remember { mutableIntStateOf(0) }
-//    LaunchedEffect(Unit) {
-//        var state by remember { mutableStateOf(Lifecycle.Event.) }
-//        https://betterprogramming.pub/jetpack-compose-with-lifecycle-aware-composables-7bd5d6793e0
-//        while(true) {
-//            delay(1.seconds)
-//            ticks++
-//        }
-//    }
-
     val ticks by stopwatch.ticks.collectAsState()
     val context = LocalContext.current
+    val statsManager = StatsManager(context)
+
     DisposableEffect(Unit) {
         val lifecycleOwner = ProcessLifecycleOwner.get()
         val observer = LifecycleEventObserver { _, event ->
@@ -96,10 +99,28 @@ fun ConjugationScreen(
                 else -> {}
             }
         }
-
         lifecycleOwner.lifecycle.addObserver(observer)
         onDispose {
             lifecycleOwner.lifecycle.removeObserver(observer)
+
+            statsManager.updateDaysPracticedCount()
+
+            val keyTicks = addressToTicks(levelNameResId)
+            val keyTicksCategory = addressToCatTicks(levelNameResId)
+            statsManager.saveTicks(keyTicks, ticks)
+            statsManager.saveTicksToCat(keyTicksCategory, ticks)
+
+            val keyAnsCorrect = addressToAnsCorrect(levelNameResId)
+            val keyAnsCorrectCategory = addressToCatAnsCorrect(levelNameResId)
+            val correct = sessionUiState.score
+            statsManager.saveAnsCorrect(keyAnsCorrect, correct)
+            statsManager.saveAnsCorrectToCat(keyAnsCorrectCategory, correct)
+
+            val keyAnsWrong = addressToAnsWrong(levelNameResId)
+            val keyAnsWrongCategory = addressToCatAnsWrong(levelNameResId)
+            val wrong = sessionUiState.wrongAnswers
+            statsManager.saveAnsWrong(keyAnsWrong, wrong)
+            statsManager.saveAnsWrongToCat(keyAnsWrongCategory, wrong)
         }
     }
 
@@ -108,6 +129,7 @@ fun ConjugationScreen(
         score,
         percentage
     )
+
 
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
@@ -128,7 +150,7 @@ fun ConjugationScreen(
         )
 
         ConjugationCard(
-            levelName = levelName,
+            levelName = stringResource(levelNameResId),
             taskMessage = taskMessage,
             theory = theory,
             newTheory = newTheory,

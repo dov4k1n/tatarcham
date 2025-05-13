@@ -54,6 +54,29 @@
     <string name="version">Version</string>
 
 
+    <string name="save_to_file">Save to file</string>
+    <string name="load_from_file">Load from file</string>
+    <string name="clear_all_data">Clear all data</string>
+    <string name="all_deleted_confirmation">All data deleted</string>
+    
+    <string name="time">Time</string>
+    <string name="first_launch">First launch</string>
+    <string name="days_passed">Days passed</string>
+    <string name="practice_days">Practice days</string>
+    <string name="practice_time">Practice time</string>
+    <string name="last_practiced_day">Last practiced day</string>
+    <string name="hours">\ h</string>
+
+    <string name="answers">Answers</string>
+    <string name="total">Total</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
+
+    <string name="exercises">Exercises</string>
+    <string name="vocabulary">Vocabulary</string>
+
+
+
     <string name="about">About:\n</string>
     <string name="more">More</string>
     <string name="play">START</string>

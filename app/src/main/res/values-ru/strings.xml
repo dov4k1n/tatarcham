@@ -42,6 +42,30 @@
     <string name="version">Версия</string>
 
 
+
+    <string name="save_to_file">Сохранить в файл</string>
+    <string name="load_from_file">Загрузить из файла</string>
+    <string name="clear_all_data">Удалить все данные</string>
+    <string name="all_deleted_confirmation">Все данные удалены</string>
+
+    <string name="time">Время</string>
+    <string name="first_launch">Первый запуск</string>
+    <string name="days_passed">Прошло дней</string>
+    <string name="practice_days">Дней практики</string>
+    <string name="practice_time">Время практики</string>
+    <string name="last_practiced_day">Последний день практики</string>
+    <string name="hours">\ час.</string>
+
+    <string name="answers">Ответы</string>
+    <string name="total">Всего</string>
+    <string name="correct">Правильно</string>
+    <string name="wrong">Ошибок</string>
+
+    <string name="exercises">Упражнения</string>
+    <string name="vocabulary">Словарный запас</string>
+
+
+
     <string name="about">Описание:\n</string>
     <string name="more">Дополнительно</string>
     <string name="play">НАЧАТЬ</string>

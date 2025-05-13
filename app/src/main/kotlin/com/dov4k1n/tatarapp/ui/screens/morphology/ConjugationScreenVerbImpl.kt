@@ -22,7 +22,7 @@ import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PresentViewModel
 @Composable
 fun VerbPresentScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_present),
+        levelNameResId = R.string.verb_present,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = PresentViewModel(),
         theory = R.string.empty_string, // R.string.verb_present_theory
@@ -33,7 +33,7 @@ fun VerbPresentScreen() {
 @Composable
 fun VerbDefinitePastScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_definite_past),
+        levelNameResId = R.string.verb_definite_past,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = DefinitePastViewModel(),
         theory = R.string.empty_string, // R.string.verb_definite_past_theory
@@ -44,7 +44,7 @@ fun VerbDefinitePastScreen() {
 @Composable
 fun VerbIndefinitePastScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_indefinite_past),
+        levelNameResId = R.string.verb_indefinite_past,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = IndefinitePastViewModel(),
         theory = R.string.empty_string, // R.string.verb_indefinite_past_theory
@@ -55,7 +55,7 @@ fun VerbIndefinitePastScreen() {
 @Composable
 fun VerbPastContinuousScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_past_continuous),
+        levelNameResId = R.string.verb_past_continuous,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = PastContinuousViewModel(),
         theory = R.string.empty_string, // R.string.verb_past_continuous_theory
@@ -66,7 +66,7 @@ fun VerbPastContinuousScreen() {
 @Composable
 fun VerbPastPerfectScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_past_perfect),
+        levelNameResId = R.string.verb_past_perfect,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = PastPerfectViewModel(),
         theory = R.string.verb_past_perfect_theory
@@ -76,7 +76,7 @@ fun VerbPastPerfectScreen() {
 @Composable
 fun VerbDefiniteFutureScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_definite_future),
+        levelNameResId = R.string.verb_definite_future,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = DefiniteFutureViewModel(),
         theory = R.string.verb_definite_future_theory
@@ -86,7 +86,7 @@ fun VerbDefiniteFutureScreen() {
 @Composable
 fun VerbIndefiniteFutureScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_indefinite_future),
+        levelNameResId = R.string.verb_indefinite_future,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = IndefiniteFutureViewModel(),
         theory = R.string.verb_indefinite_future_theory
@@ -96,7 +96,7 @@ fun VerbIndefiniteFutureScreen() {
 @Composable
 fun VerbInfinitiveScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_infinitive),
+        levelNameResId = R.string.verb_infinitive,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = InfinitiveViewModel(),
         skipPrefix = true,
@@ -107,7 +107,7 @@ fun VerbInfinitiveScreen() {
 @Composable
 fun VerbGerundScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_gerund),
+        levelNameResId = R.string.verb_gerund,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = GerundViewModel(),
         skipPrefix = true,
@@ -118,7 +118,7 @@ fun VerbGerundScreen() {
 @Composable
 fun VerbFutureInThePastScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.verb_future_in_the_past),
+        levelNameResId = R.string.verb_future_in_the_past,
         taskMessage = stringResource(R.string.verb_task_message),
         viewModel = FutureInThePastViewModel(),
         theory = R.string.verb_future_in_the_past_theory

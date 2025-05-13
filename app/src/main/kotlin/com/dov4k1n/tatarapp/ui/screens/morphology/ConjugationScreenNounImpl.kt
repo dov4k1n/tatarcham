@@ -9,7 +9,7 @@ import com.dov4k1n.tatarapp.ui.viewmodel.morphology.PluralViewModel
 @Composable
 fun NounPluralScreen() {
     ConjugationScreen(
-        levelName = stringResource(R.string.noun_plural),
+        levelNameResId = R.string.noun_plural,
         taskMessage = stringResource(R.string.non_verb_task_message),
         viewModel = PluralViewModel(),
         theory = R.string.noun_plural_theory,

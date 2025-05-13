@@ -42,6 +42,30 @@
     <string name="version">Версия</string>
 
 
+
+    <string name="save_to_file">Файлга саклау</string>
+    <string name="load_from_file">Файлдан кертү</string>
+    <string name="clear_all_data">Бөтен язуларны бозу</string>
+    <string name="all_deleted_confirmation">Бөтен язулар бозылды</string>
+
+    <string name="time">Вакыт</string>
+    <string name="first_launch">Беренче ачу</string>
+    <string name="days_passed">Үткән көн</string>
+    <string name="practice_days">Укыган көн</string>
+    <string name="practice_time">Укыган вакыт</string>
+    <string name="last_practiced_day">Соңгы укыган көн</string>
+    <string name="hours">\ сәгать</string>
+
+    <string name="answers">Җаваплар</string>
+    <string name="total">Барысы</string>
+    <string name="correct">Дөрес</string>
+    <string name="wrong">Хата</string>
+
+    <string name="exercises">Күнегүләр</string>
+    <string name="vocabulary">Сүз байлыгы</string>
+
+
+
     <string name="about">Турында:\n</string>
     <string name="more">Өстәмә</string>
     <string name="play">БАШЛАУ</string>

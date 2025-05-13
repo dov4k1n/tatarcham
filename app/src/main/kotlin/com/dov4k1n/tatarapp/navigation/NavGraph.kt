@@ -17,6 +17,7 @@ import com.dov4k1n.tatarapp.data.BottomAppBarItem
 import com.dov4k1n.tatarapp.data.MorphologyScreen
 import com.dov4k1n.tatarapp.data.NavigationDrawerItems
 import com.dov4k1n.tatarapp.ui.screens.AboutAppScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.StatisticsScreen
 import com.dov4k1n.tatarapp.ui.screens.UnderDevelopmentScreen
 import com.dov4k1n.tatarapp.ui.screens.culture.CultureScreen
 import com.dov4k1n.tatarapp.ui.screens.lexicon.LexiconScreen
@@ -33,6 +34,12 @@ import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastContinuousScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPastPerfectScreen
 import com.dov4k1n.tatarapp.ui.screens.morphology.VerbPresentScreen
 import com.dov4k1n.tatarapp.ui.screens.phonetics.PhoneticsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.CultureStatsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.LexiconStatsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.MorphologyStatsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.PhoneticsStatsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.StatisticsDetailsScreen
+import com.dov4k1n.tatarapp.ui.screens.statistics.SyntaxStatsScreen
 import com.dov4k1n.tatarapp.ui.screens.syntax.SyntaxScreen
 
 @Composable
@@ -109,9 +116,36 @@ fun NavGraph(
             CultureScreen()
         }
         composable(route = NavigationDrawerItems.Statistics.route) {
-            UnderDevelopmentScreen(
-                name = stringResource(NavigationDrawerItems.Statistics.title)
+            val screenMap = hashMapOf(
+                R.string.bottom_bar_phonetics to StatisticsDetailsScreen.PhoneticsStats,
+                R.string.bottom_bar_lexicon to StatisticsDetailsScreen.LexiconStats,
+                R.string.bottom_bar_morphology to StatisticsDetailsScreen.MorphologyStats,
+                R.string.bottom_bar_syntax to StatisticsDetailsScreen.SyntaxStats,
+                R.string.bottom_bar_culture to StatisticsDetailsScreen.CultureStats,
             )
+
+            StatisticsScreen(
+                onNavigateToDetails = { titleAddress: Int ->
+                    val screen = screenMap[titleAddress]
+                    if (screen != null) {
+                        navController.navigate(screen.name) {
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                }
+            )
+        }
+        StatisticsDetailsScreen.entries.forEach { screen ->
+            composable(route = screen.name) {
+                when (screen) {
+                    StatisticsDetailsScreen.PhoneticsStats -> PhoneticsStatsScreen()
+                    StatisticsDetailsScreen.LexiconStats -> LexiconStatsScreen()
+                    StatisticsDetailsScreen.MorphologyStats -> MorphologyStatsScreen()
+                    StatisticsDetailsScreen.SyntaxStats -> SyntaxStatsScreen()
+                    StatisticsDetailsScreen.CultureStats -> CultureStatsScreen()
+                }
+            }
         }
         composable(route = NavigationDrawerItems.Settings.route) {
             UnderDevelopmentScreen(
