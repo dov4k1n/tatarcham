@@ -85,6 +85,7 @@ fun PreviewNonExpandableListItem() {
 @Composable
 fun NonExpandableListItem(
     title: String,
+    titleColor: Color = colorScheme.primary,
     icon: ImageVector,
     iconColor: Color,
     shape: Shape,
@@ -128,6 +129,7 @@ fun NonExpandableListItem(
             ) {
                 Text(
                     text = title,
+                    color = titleColor,
                     style = typography.bodyMedium,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
