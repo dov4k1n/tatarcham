@@ -1,5 +1,3 @@
-import com.android.builder.compiling.BuildConfigType
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -14,8 +12,8 @@ android {
         applicationId = "com.dov4k1n.tatarapp"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.2.0"
+        versionCode = 20250626
+        versionName = "0.2"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -30,7 +28,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -42,6 +39,12 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
     }
     packaging {
         resources {
