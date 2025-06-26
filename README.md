@@ -16,7 +16,7 @@ coming soon.
 Currently supports Russian, partially Tatar and English.
 
 ## Privacy Policy
-See [file](#PRIVACY_POLICY.md).
+See [PRIVACY_POLICY.md](https://github.com/dov4k1n/tatarcham/blob/main/PRIVACY_POLICY.md).
 
 ## Contribution
 Feel free to contact me via email or telegram, create an issue for feature 
@@ -25,6 +25,7 @@ request or bug.
 Contribution.md file is coming soon.
 
 ## License
+```
 Tatarcham v0.2, tatar language learning app for Android.
 Copyright (C) 2023-2025 Ayzat Rizatdinov <ddov4k1n at gmail dot com>
 
@@ -40,3 +41,4 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see https://www.gnu.org/licenses/.
+```
