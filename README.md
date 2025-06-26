@@ -16,7 +16,7 @@ coming soon.
 Currently supports Russian, partially Tatar and English.
 
 ## Privacy Policy
-See [PRIVACY_POLICY.md](https://github.com/dov4k1n/tatarcham/blob/main/PRIVACY_POLICY.md).
+See [privacy_policy.md](https://github.com/dov4k1n/tatarcham/blob/main/privacy_policy.md).
 
 ## Contribution
 Feel free to contact me via email or telegram, create an issue for feature 

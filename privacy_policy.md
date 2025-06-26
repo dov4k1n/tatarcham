@@ -1,6 +1,6 @@
 # Privacy Policy of Tatarcham
 
-Tatarcham is an open-source Android app developed by Ayzat Rizatdinov.  
+Tatarcham is a free and open-source Android app developed by Ayzat Rizatdinov.  
 The source code is available on GitHub under the [GPL-3.0 license](https://github.com/dov4k1n/tatarcham/blob/main/LICENSE).
 
 ## Data Collection
