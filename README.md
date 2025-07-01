@@ -4,13 +4,14 @@ Tatar language learning app for Android.
 This is the under development 0.2 version.
 
 ## Download
-coming soon.
+Check https://github.com/dov4k1n/tatarcham/releases.  
+F-Droid release coming soon.
 
 ## Features
 coming soon.
 
 ## Screenshots
-coming soon.
+See https://dov4k1n.github.io/screenshots/grid.html.
 
 ## Translations
 Currently supports Russian, partially Tatar and English.
